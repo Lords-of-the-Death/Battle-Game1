@@ -4,6 +4,81 @@
     box-sizing: border-box;
 }
 body{
-    background-image: url(../img/arena_jpg/createPlayer.jpg);
-    background-position: center;
+    background-image: url('../img/arena_jpg/createPlayer.jpg');
+    background-repeat: no-repeat;
+    /*background-attachment: fixed;*/
+    /*background-position: center;*/
+    background-size: cover;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+h1{
+    position: absolute;
+    top: 9%;
+    left: 22%;
+}
+.navBtn{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 10px 0px 10px;
+}
+.btnTop{
+    width: 250px;
+    height: 100px;
+    border-radius: 50px;
+    background-color: #D3A94C;
+}
+.tableSelection{
+    position: absolute;
+    width: 803px;
+    height: 750px;
+    top: 15%;
+    left: 10%;
+    border: 5px solid #D3A94C;
+    border-radius: 50px;
+    background-color: rgba(217, 217, 217, 0.75);
+}
+.cardHero{
+    position: absolute;
+    width: 550px;
+    height: 750px;
+    top: 15%;
+    right: 10%;
+    border: 5px solid #D3A94C;
+    border-radius: 50px;
+    background-color: rgba(217, 217, 217, 0.75);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+}
+.statHero{
+    background-color: rgba(0, 0, 0, 0.25);
+    width: 400px;
+    height: 50px;
+    border-radius: 50px;
+    margin: 5px;
+    text-align: center;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+.btnSubmit{
+    width: 287px;
+    height: 92px;
+    border-radius: 50px;
+    margin-top: 15px;
+    background-color: #00660A;
+    color: #D3A94C;
+}
+#inputName{
+    background-color: #D3A94C;
+    width: 400px;
+    height: 50px;
+    border-radius: 50px;
+    text-align: center;
+}
+::placeholder{
+    text-align: center;
 }
