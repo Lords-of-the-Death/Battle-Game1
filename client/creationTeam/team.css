@@ -60,6 +60,7 @@ h1{
     height: 400px;
     background-color: rgba(245, 245, 245, 0.5);
     margin: 45px auto;
+    overflow: auto;
 }
 .teamBuff{
     width: 250px;
@@ -111,4 +112,18 @@ h1{
     position: absolute;
     bottom: 100px;
     border: 3px solid #D3A94C;
+}
+
+.droppable {
+    width: 200px;
+    height: 100px;
+    border: 2px dashed #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.listPerso{
+    background-color: #ccc;
+    padding: 1px;
+    width: 100%;
 }

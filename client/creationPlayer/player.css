@@ -56,7 +56,6 @@ td img{
     flex-direction: column;
     align-items: center;
     padding: 50px;
-    visibility: hidden;
     text-align: center;
 }
 .statHero{
