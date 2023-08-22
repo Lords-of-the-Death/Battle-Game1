@@ -20,6 +20,7 @@ const url = 'http://localhost:8080/top';
 document.addEventListener("DOMContentLoaded", () => {
   fetchData()
     .then((body) => { createCards(body); })
+    /*.then((body) => {console.log(body);})*/
     .catch((error) => { console.log("Erreur de récupération des données : " + error.message); });
 });
 
@@ -31,8 +32,6 @@ async function fetchData() {
     headers: headers,
     redirect: "follow"
   };
-
-  console.log('Données Hearders ', headers);
 
   try {
     const response = await fetch(url, requestOptions);
@@ -53,14 +52,18 @@ async function fetchData() {
                     </div>*/
 
 function createCards(body){
-    var cardsContainer = document.getElementById("listeplayer");
-    var cards = body.data;
+    let cardsContainer = document.getElementById("listeplayer");
+    let cards = body;
+    let addHTML;
+
 
     cards.forEach((card) => {
         var cardElement = document.createElement("div");
         cardElement.classList.add("players");
     
-        addHTML =  card.NamePlayer + ' Lvl: ' + card.LevelPlayer;
+        addHTML =  card.NamePlayer + ' PV: ' + card.LevelPlayer;
+
+        console.log('Element ',addHTML);
     
         cardElement.innerHTML = addHTML;
     

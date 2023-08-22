@@ -10,37 +10,33 @@
 	box-sizing: border-box;
 }
 
-body{
 
-    background-image: url('./asset/fond.jpg');
-    background-size: 115%;
-    background-repeat: no-repeat;
+body{
+    background: url(./asset/fond.jpg) center/cover;
+    min-height: 100vh;
     overflow: hidden;
 }
 
-
 .tableau{
-    height: 950px;
+    height: 90%;
     width: 850px;
     background: rgba(71, 71, 71, 0.75);
     border: var(--bord) solid 10px;
     border-radius: 25px;
 
     position: absolute;
-    top: 65px;
-    left: 166px;
-    padding-bottom: 100px;
+    top: 3rem;
+    left: 5rem;
+    padding-bottom: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    
-
 }
 
 .title{
     scale: .5;
-    padding-bottom: 150px;
+    padding-bottom: 15%;
 }
 
 .listeplayer{
@@ -51,17 +47,17 @@ body{
     
 }
 .players{
-    height: 75px;
-    width: 600px;
+    height: 2em;
+    width: 20em;
     border-radius: 50px;
     background: rgba(0, 0, 0, 0.50);
     border: var(--bord) solid 5px;
-    color: #D3A94C;
+    color: var(--bord);
     text-align: center;
     font-family: Inknut Antiqua;
-    font-size: 50px;
+    font-size: 2em;
     font-weight: 700;
-    margin-bottom: 50px;
+    margin-bottom: 2rem;
 }
 
 .button{
@@ -73,7 +69,7 @@ body{
     flex-shrink: 0;
     border-radius: 50px;
     border: 1px solid #000;
-    background: #D3A94C;
+    background: var(--bord);
     color: #000;
     text-align: center;
     font-family: Metal Mania;
