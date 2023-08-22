@@ -59,5 +59,10 @@ p{
     font-size: 50px;
     font-weight: 400;
     padding-top: 15px;
-    
+}
+
+a{
+    text-decoration: none;
+    text-decoration-color: var(--bord);
+
 }
