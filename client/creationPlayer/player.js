@@ -13,9 +13,14 @@ if (modalImage.src) {
 
 images.forEach(image => {
     image.addEventListener("click", () => {
+
+        const idPerso = image.id
         modal.style.display = "block";
         modalImage.src = image.src;
-        let idPerso = image.id
+        modalImage.alt = idPerso;
+
+        
+
         fetch(`http://localhost:8080/hero/${idPerso}`,{
         method: "GET",
         headers: {
@@ -24,32 +29,39 @@ images.forEach(image => {
         })
         .then(response => response.json())
         .then(data => handlePlayer(data))
+
         function handlePlayer(data) {
+
             let namechar = document.getElementById('namechar')
             namechar.innerHTML = data[0].NamePerso
+
+            let attchar = document.getElementById('attchar')
+            attchar.innerHTML = data[0].AttPerso
+
+            let defchar = document.getElementById('defchar')
+            defchar.innerHTML = data[0].DefPerso            
+
         }
     });
 });
 
-closeModal.addEventListener("click", () => {
-    modal.style.display = "none";
-});
-
-// FETCH CREATION PERSO
-
 document.getElementById('user-form').addEventListener('submit', function(event) {
+
     event.preventDefault(); // Empêcher le formulaire de se soumettre normalement
     
     const inputName = document.getElementById('inputName').value;
     const randomDef = Math.floor(Math.random() * (100 - 50 + 1)) + 50;
+    const Deef = randomDef * defchar.innerHTML;
     const randomAtt = Math.floor(Math.random() * (100 - 50 + 1)) + 50;
+    const Attk = randomAtt  * attchar.innerHTML;
     const level = 1;
-    
+
     const userData = {
         NamePlayer: inputName,
-        AttPlayer: randomAtt,
-        DefPlayer: randomDef,
-        LevelPlayer: level
+        AttPlayer: Attk,
+        DefPlayer: Deef,
+        LevelPlayer: level,
+        idPerso: modalImage.alt
     };
     
     fetch('http://localhost:8080/register', {
@@ -59,13 +71,21 @@ document.getElementById('user-form').addEventListener('submit', function(event) 
         },
         body: JSON.stringify(userData)
     })
+
     .then(response => response.json())
     .then(data => {
         console.log('Données envoyées avec succès', data);
     })
+
     .catch(error => {
         console.error('Erreur lors de l\'envoi des données', error);
     });
 
+    modal.style.display = "none";
+
+});
+
+
+closeModal.addEventListener("click", () => {
     modal.style.display = "none";
 });

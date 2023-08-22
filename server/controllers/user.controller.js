@@ -9,15 +9,15 @@ const conn = mysql.createConnection({
 // User
 const createPlayer = (req, res) => {
   // utilise req.body de body-parser
-  const { NamePlayer, AttPlayer, DefPlayer, LevelPlayer } = req.body;
+  const { NamePlayer, AttPlayer, DefPlayer, LevelPlayer, idPerso } = req.body;
   // vérifier si les champs sont remplis
-  if (!NamePlayer || !AttPlayer || !DefPlayer || !LevelPlayer) {
+  if (!NamePlayer || !AttPlayer || !DefPlayer || !LevelPlayer || !idPerso) {
     return res.status(400).json({
       error: 'donnée manquante',
     })
   }
-  const query = 'INSERT INTO player (NamePlayer, AttPlayer, DefPlayer, LevelPlayer) VALUES (?,?,?,?)';
-  conn.query(query, [ NamePlayer, AttPlayer, DefPlayer, LevelPlayer ], (err) => {
+  const query = 'INSERT INTO player (NamePlayer, AttPlayer, DefPlayer, LevelPlayer, idPerso) VALUES (?,?,?,?,?)';
+  conn.query(query, [ NamePlayer, AttPlayer, DefPlayer, LevelPlayer, idPerso ], (err) => {
     if (err) {
       console.error('erreur lors de l\'insertion des données : ' + err);
       res.status(500).json({ error: 'erreur lors de l\'insertion des données' });

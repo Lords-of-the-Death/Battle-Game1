@@ -102,3 +102,7 @@ td img{
 ::placeholder{
     text-align: center;
 }
+span{
+    position: absolute;
+    margin: -45px 10px;
+}
