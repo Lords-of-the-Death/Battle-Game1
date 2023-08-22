@@ -30,9 +30,9 @@ h1{
     width: 300px;
     padding: 5px;
     border: 3px solid #D3A94C;
-    border-radius: 10%;
     margin: 0px auto;
     position: relative;
+    border-radius: 50px;
     top: -25px;
 }
 .midCard{
@@ -53,14 +53,16 @@ h1{
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin: 20px 40px;
+    margin: 5px 40px;
+}
+.buff p{
+    margin-left: 20px;
 }
 .table{
     width: 400px;
     height: 400px;
     background-color: rgba(245, 245, 245, 0.5);
     margin: 45px auto;
-    overflow: auto;
 }
 .teamBuff{
     width: 250px;
@@ -68,10 +70,14 @@ h1{
     background-color: rgba(0, 0, 0, 0.5);
     color: #D3A94C;
     border: 3px solid #D3A94C;
-    border-radius: 10%;
+    border-radius: 25px;
     text-align: center;
-    font-size: 50px;
+    font-size: 40px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    align-items: center;
 }
 .teamBuff p{
     margin: 20px auto;
@@ -86,7 +92,7 @@ h1{
     background-color: rgba(0, 0, 0, 0.5);
     color: #D3A94C;
     border: 3px solid #D3A94C;
-    border-radius: 10%;
+    border-radius: 25px;
     margin-top: 30px;
 }
 .ecar{
@@ -96,8 +102,9 @@ h1{
 .viderTeam{
     width: 90%;
     color: #D3A94C;
+    border-radius: 50px;
     border: 3px solid #D3A94C;
-    background-color: #A30000;
+    background: #A30000;
     display: block;
     margin: 14px auto;
 }
@@ -114,14 +121,6 @@ h1{
     border: 3px solid #D3A94C;
 }
 
-.droppable {
-    width: 200px;
-    height: 100px;
-    border: 2px dashed #ccc;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 .listPerso{
     background-color: #ccc;
     padding: 1px;
