@@ -28,19 +28,34 @@ const createPlayer = (req, res) => {
 };
 
 const getAllPlayer = (req, res) => {
-    const query = 'SELECT * FROM `player`';
-    conn.query(query, (err, result) => {
-      if (err) {
-        console.error('Erreur de la récupération des données ' + err);
-        res.status(500).json({ error: 'Erreur lors de la récupération des données' });
-      } else {
-        res.status(200).json(result);
-      }
-    })
+  const query = 'SELECT * FROM `player`';
+  conn.query(query, (err, result) => {
+    if (err) {
+      console.error('Erreur de la récupération des données ' + err);
+      res.status(500).json({ error: 'Erreur lors de la récupération des données' });
+    } else {
+      res.status(200).json(result);
+    }
+  })
 
-  }
+};
+
+const getPerso = (req, res) => {
+  const query = "SELECT * FROM `perso` WHERE idPerso = ?";
+  conn.query(query, [req.params.id], (err, result) => {
+    if (err) {
+      console.error('Erreur de la récupération des données ' + err);
+      res.status(500).json({ error: 'Erreur lors de la récupération des données' });
+    } else {
+      res.status(200).json(result);
+    }
+  })
+
+};
+
 
 module.exports = {
   createPlayer,
-  getAllPlayer
+  getAllPlayer,
+  getPerso
 };
