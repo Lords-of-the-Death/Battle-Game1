@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
+
+:root{
+    --marron:#A30000;
+    --noir:#000;
+    --bord:#D3A94C;
+    --vert:#00660A;
+    --rouge:#FF0000;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+    background: url(./assetindex/Fond-start.jpg) center/cover;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.banner{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.banner .img{
+    width: 200px;
+    
+}
+
+.button{
+    width: 250px;
+    height: 100px;
+    flex-shrink: 0;
+    border-radius: 50px;
+    border: 1px solid #000;
+    background: var(--bord);
+    color: #000;
+    text-align: center;
+    font-family: Metal Mania;
+    font-size: 50px;
+    font-weight: 400;
+    padding-top: 15px;
+    margin-top: 42px;
+    
+}
+
+#buttong{
+    margin-left: 25px;
+}
+
+#buttond{
+    margin-right: 25px;
+}
+
+a{
+    text-decoration: none;
+}

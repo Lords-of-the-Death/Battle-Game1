@@ -1,0 +1,9 @@
+# Modèle créé le : Fri Aug 11 13:20:45 CEST 2023 
+Perso (IdPerso, AttPerso, DefPerso, imgIdlePerso, imgAttPerso, imgDefPerso, imgDiePerso, NamePerso) 
+Player (IdPlayer, NamePlayer, AttPlayer, DefPlayer, LevelPlayer, IdPersoPlayer, #IdPerso) 
+Team1 (IdTeam1, Buff1, TimeStampsTeam1) 
+Battle (IdBattle, IdTeam1, idTeam2, TimeStampBattle) 
+Team2 (IdTeam2, Buff2, TimeStampsTeam2) 
+Faire_Partie_de (IdPlayer, IdTeam1, IdTeam2, IdPlayerinTeam, IdTeaminSection) 
+EngageTeam1 (IdTeam1, IdBattle) 
+EngageTeam2 (IdTeam2, IdBattle) 
