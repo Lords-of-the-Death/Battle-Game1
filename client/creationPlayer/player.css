@@ -22,6 +22,7 @@ h1{
     position: absolute;
     font-family: Metal Mania;
     color: var(--bord);
+    font-size: 50px;
     top: 9%;
     left: 22%;
 }
@@ -46,22 +47,23 @@ h1{
 a{
     text-decoration: none;
     text-decoration-color: var(--bord);
-    color: #000;
+    color: var(--noir);
 }
 .tableSelection{
     position: absolute;
-    width: 803px;
-    height: 750px;
+    width:inherit;
+    height: inherit;
     top: 15%;
     left: 10%;
+    padding: auto;
     border: 5px solid var(--bord);
     border-radius: 50px;
     background-color: rgba(217, 217, 217, 0.75);
 }
+
 td img{
-    width: 140px;
+    width: 145px;
     height: 140px;
-    margin:0 30px 0 30px;
 }
 .cardHero{
     position: absolute;
@@ -71,7 +73,7 @@ td img{
     right: 10%;
     border: 5px solid var(--bord);
     border-radius: 50px;
-    background-color: rgba(0, 0, 0, 0.25);
+    background-color: rgba(217, 217, 217, 0.75);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -94,6 +96,7 @@ td img{
     border-radius: 50px;
     margin: 5px;
     font-size: 35px;
+    font-family: Metal Mania;
     text-align: center;
     display: flex;
     align-content: center;
@@ -106,23 +109,28 @@ td img{
     border-radius: 50px;
     margin-top: 15px;
     font-size: 25px;
-    background-color: #00660A;
-    border: 3px solid #D3A94C;
-    color: #D3A94C;
+    font-family: Metal Mania;
+    background-color: var(--vert);
+    border: 3px solid var(--bord);
+    color: var(--bord);
 }
 #inputName{
-    background-color: #D3A94C;
-    border: 3px solid #D3A94C;
+    background-color: var(--bord);
+    border: 3px solid var(--bord);
+    font-family: Metal Mania;
     width: 400px;
     height: 50px;
-    font-size: 35px;
+    font-size: 45px;
     border-radius: 50px;
     text-align: center;
 }
 ::placeholder{
     text-align: center;
 }
-span{
-    position: absolute;
-    margin: -45px 10px;
+
+
+#modalImage{
+    height: 140px;
+    width: 140px;
+
 }
