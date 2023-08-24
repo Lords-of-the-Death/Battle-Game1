@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mar. 22 août 2023 à 11:55
+-- Généré le : jeu. 24 août 2023 à 06:52
 -- Version du serveur : 8.0.31
 -- Version de PHP : 8.0.26
 
@@ -143,7 +143,7 @@ CREATE TABLE IF NOT EXISTS `player` (
   `IdPerso` int DEFAULT NULL,
   PRIMARY KEY (`IdPlayer`),
   KEY `FK_Player_IdPerso` (`IdPerso`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `player`
@@ -154,7 +154,8 @@ INSERT INTO `player` (`IdPlayer`, `NamePlayer`, `AttPlayer`, `DefPlayer`, `Level
 (2, 'Isabelle', 6, 8, 1, 2),
 (3, 'Cloé', 5, 9, 2, 3),
 (4, 'Gontrand', 8, 9, 2, 4),
-(5, 'Maurice', 5, 8, 3, 5);
+(5, 'Maurice', 5, 8, 3, 5),
+(6, 'Alphonsine', 5, 10, 1, 6);
 
 -- --------------------------------------------------------
 
