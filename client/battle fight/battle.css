@@ -1,0 +1,152 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url('../img/arena_jpg/arena2.jpg');
+    background-repeat: no-repeat;
+    /*background-attachment: fixed;*/
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+.top{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 10px 0px 10px;
+}
+.buff{
+    width: 250px;
+    height: 250px;
+    background-color: #000;
+    border-radius: 100px;
+    border: 5px solid #D3A94C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.buff img{
+    width: 197px;
+    height: 188px;
+}
+.start{
+    width: 280px;
+    height: 75px;
+    background-color: #00660A;
+    color: #D3A94C;
+    border-radius: 50px;
+    border: 3px solid #D3A94C;
+    font-weight: bold;
+    font-size: 30px;
+}
+.toptop{
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    color: #D3A94C;
+}
+.team2{
+    position: absolute;
+    right: 25%;
+    bottom: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.team2 img{
+    width: 184px;
+    height: 152px;
+    position: absolute;
+}
+.team1{
+    position: absolute;
+    left: 25%;
+    bottom: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.team1 img{
+    width: 184px;
+    height: 152px;
+    
+}
+.infoGame{
+    width: 500px;
+    height: 500px;
+    background-color: rgba(0, 0, 0, 0.50);
+    border-radius: 30px;
+    margin: 10px;
+    border:5px solid #D3A94C;
+}
+.barLife{
+    width: 100%;
+}
+.hero1T1{
+    bottom: -200px;
+    position: absolute;
+    left: -130px;
+}
+.hero2T1{
+    bottom: -75px;
+    left: -25px;
+    position: absolute;
+}
+.hero3T1{
+    bottom: -200px;
+    position: absolute;
+    left: -380px;
+}
+.hero4T1{
+    bottom: -75px;
+    position: absolute;
+    left: -250px;
+}
+.hero5T1{
+    bottom: -200px;
+    position: absolute;
+    left: 100px;
+}
+.hero1T2{
+    bottom: -40px;
+    position: absolute;
+    left: 180px;
+}
+.hero2T2{
+    bottom: -40px;
+    position: absolute;
+    left: -40px;
+}
+.hero3T2{
+    bottom: 75px;
+    position: absolute;
+    left: -150px;
+}
+.hero4T2{
+    bottom: -40px;
+    position: absolute;
+    left: -270px;
+}
+.hero5T2{
+    bottom: 75px;
+    position: absolute;
+    left: 75px;
+}
+.lifeBarT1{
+    width: 50px;
+    height: 10px;
+    position: absolute;
+    left: 60px;
+    background-color: #00660A;
+    border: 2px solid #000;
+}
+.lifeBarT2{
+    width: 50px;
+    height: 10px;
+    position: absolute;
+    left: 75px;
+    background-color: #00660A;
+    border: 2px solid #000;
+}

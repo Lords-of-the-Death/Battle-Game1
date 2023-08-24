@@ -7,15 +7,18 @@
     <link rel="stylesheet" href="player.css">
 </head>
 <body>
+    <audio autoplay loop >
+        <source src="./asset/player.mp3" type="audio/mpeg" />
+    </audio>
 
 
     <nav class="navBtn">
         <div class="button">
-            <a href="#">Team</a>
+            <a href="../creationTeam/team.html">Team</a>
         </div>
         
         <div class="button" style="right: 10px;">
-            <a href="#">Return</a>
+            <a href="../index.html">Return</a>
         </div>
     </nav>
 
@@ -70,6 +73,6 @@
             <button type="submit" class="btnSubmit">ENREGISTRER</button>
         </form>
     </div>
-    <script src="player.js"></script>
+    <script type="module" src="player.js"></script>
 </body>
 </html>

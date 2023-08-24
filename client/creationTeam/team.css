@@ -15,7 +15,7 @@
 }
 
 body {
-	background: url(../../asset/image/Fond-team.jpg) center/cover;
+	background: url(./asset/Fond-team.jpg) center/cover;
 	min-height: 100vh;
 	overflow: hidden;
 }
@@ -32,9 +32,9 @@ body {
 	height: 100px;
 	flex-shrink: 0;
 	border-radius: 50px;
-	border: 1px solid #000;
+	border: 1px solid var(--noir);
 	background: var(--bord);
-	color: #000;
+	color: var(--noir);
 	text-align: center;
 	font-family: Metal Mania;
 	font-size: 50px;
@@ -65,7 +65,7 @@ a {
 	height: 150px;
 	flex-shrink: 0;
 	border-radius: 25px;
-	border: 5px solid #d3a94c;
+	border: 5px solid var(--bord);
 	background: rgba(0, 0, 0, 0.5);
 	margin: 2rem;
 }
@@ -75,7 +75,7 @@ a {
 	height: 150px;
 	flex-shrink: 0;
 	border-radius: 25px;
-	border: 5px solid #d3a94c;
+	border: 5px solid  var(--bord);
 	background: rgba(0, 0, 0, 0.5);
 	margin: 2rem;
 }
@@ -87,7 +87,7 @@ a {
 	width: 133px;
 	height: 61px;
 	flex-shrink: 0;
-	color: #d3a94c;
+	color: var(--bord);
 	text-align: center;
 	font-family: Metal Mania;
 	font-size: 40px;
@@ -106,7 +106,7 @@ a {
 	height: 480px;
 	flex-shrink: 0;
 	border-radius: 25px;
-	border: 5px solid #d3a94c;
+	border: 5px solid var(--bord);
 	background: rgba(0, 0, 0, 0.5);
 	margin: 2rem;
 }
@@ -116,7 +116,7 @@ a {
 	height: 480px;
 	flex-shrink: 0;
 	border-radius: 25px;
-	border: 5px solid #d3a94c;
+	border: 5px solid var(--bord);
 	background: rgba(0, 0, 0, 0.5);
 	margin: 2rem;
 }
@@ -138,15 +138,15 @@ a {
 	justify-content: center;
 	align-items: center;
 	font-family: 'Metal Mania', cursive;
-	color: #d3a94c;
+	color: var(--bord);
 	cursor: pointer;
 	font-size: 30px;
 	width: 300px;
 	height: 50px;
 	flex-shrink: 0;
 	border-radius: 50px;
-	border: 5px solid #d3a94c;
-	background: #a30000;
+	border: 5px solid var(--bord);
+	background: var(--marron);
 }
 
 .cardsBattle {
@@ -164,7 +164,7 @@ a {
 	height: 525px;
 	flex-shrink: 0;
 	border-radius: 50px;
-	border: 5px solid #d3a94c;
+	border: 5px solid var(--bord);
 	background: rgba(0, 0, 0, 0.5);
 	position: relative;
 }
@@ -179,7 +179,7 @@ a {
 	height: 200px;
 	flex-shrink: 0;
 	border-radius: 25px;
-	border: 5px solid #d3a94c;
+	border: 5px solid var(--bord);
 	background: rgba(0, 0, 0, 0.5);
 	margin: 2rem; 
 }
@@ -188,7 +188,7 @@ a {
     display: flex;
     justify-content: center;
 	flex-shrink: 0;
-	color: #d3a94c;
+	color: var(--bord);
 	text-align: center;
 	font-family: Metal Mania;
 	font-size: 40px;
@@ -206,7 +206,7 @@ a {
 }
 
 .img_text {
-    color: #D3A94C;
+    color: var(--bord);
     text-align: center;
 }
 .btn {
@@ -217,8 +217,8 @@ a {
 	height: 50px;
 	flex-shrink: 0;
 	border-radius: 50px;
-	border: 5px solid #d3a94c;
-	background: #00660a;
+	border: 5px solid var(--bord);
+	background: var(--vert);
 	position: absolute;
 	bottom: 20px; /* Espacement du bas */
 	right: 45%; 
@@ -228,7 +228,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #D3A94C;
+    color: var(--bord);
     font-family: Metal Mania;
     font-size: 20px;
     font-style: normal;
