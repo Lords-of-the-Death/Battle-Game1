@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>createPlayer</title>
+    <link rel="stylesheet" href="player.css">
+</head>
+<body>
+    <nav class="navBtn">
+        <div class="button">
+            <a href="#">Team</a>
+        </div>
+        <h1>Select your GLADIATORS</h1>
+        <div class="button" style="right: 10px;">
+            <a href="#">Return</a>
+        </div>
+    </nav>
+    <div class="tableSelection">
+        <table>
+            <tbody>
+                <tr>
+                    <td><img src="../../image/perso/Heros/Axe hero/male/1_idle/1.png" alt="Axe_M" id="2" class="modal-image"></td>
+                    <td><img src="../../image/perso/Heros/Axe hero/female/1_idle/1.png" alt="Axe_F" id="1" class="modal-image"></td>
+                    <td><img src="../../image/perso/Heros/Bandage hero/male/1_idle/1.png" alt="Bandage_M" id="10" class="modal-image"></td>
+                    <td><img src="../../image/perso/Heros/Bandage hero/female/1_idle/1.png" alt="Bandage_F" id="9" class="modal-image"></td>
+                </tr>
+                <tr>
+                    <td><img src="../../image/perso/Heros/Blind hero/male/1_idle/1.png" alt="Blind_M" id="4" class="modal-image"></td>
+                    <td><img src="../../image/perso/Heros/Blind hero/female/1_idle/1.png" alt="Blind_F" id="3" class="modal-image"></td>
+                    <td><img src="../../image/perso/Heros/Cryo hero/male/1_idle/1.png" alt="Cryo_M" id="6"  class="modal-image"></td>
+                    <td><img src="../../image/perso/Heros/Cryo hero/female/1_idle/1.png" alt="Cryo_F" id="5" class="modal-image"></td>
+                </tr>
+                <tr>
+                    <td><img src="../../image/perso/Heros/Dark hero/male/1_idle/1.png" alt="Dark_M" id="8" class="modal-image"></td>
+                    <td><img src="../../image/perso/Heros/Dark hero/female/1_idle/1.png" alt="Dark_F" id="7" class="modal-image"></td>
+                    <td><img src="../../image/perso/Heros/Electro hero/male/1_idle/1.png" alt="Electro_M" id="12" class="modal-image"></td>
+                    <td><img src="../../image/perso/Heros/Electro hero/female/1_idle/1.png" alt="Electro_F" id="11" class="modal-image"></td>
+                </tr>
+                <tr>
+                    <td><img src="../../image/perso/Heros/Hammer hero/male/1_idle/1.png" alt="Hammer_M" id="14" class="modal-image"></td>
+                    <td><img src="../../image/perso/Heros/Hammer hero/female/1_idle/1.png" alt="Hammer_F" id="13" class="modal-image"></td>
+                    <td><img src="../../image/perso/Heros/Hydro hero/male/1_idle/1.png" alt="Hydro_M" id="16" class="modal-image"></td>
+                    <td><img src="../../image/perso/Heros/Hydro hero/female/1_idle/1.png" alt="Hydro_F" id="15" class="modal-image"></td>
+                </tr>
+                <tr>
+                    <td><img src="../../image/perso/Heros/Pyro hero/male/1_idle/1.png" alt="Pyro_M" id="18" class="modal-image"></td>
+                    <td><img src="../../image/perso/Heros/Pyro hero/female/1_idle/1.png" alt="Pyro_F" id="17" class="modal-image"></td>
+                    <td><img src="../../image/perso/Heros/Skull hero/male/1_idle/1.png" alt="Skull_M" id="20" class="modal-image"></td>
+                    <td><img src="../../image/perso/Heros/Skull hero/female/1_idle/1.png" alt="Skull_F" id="19" class="modal-image"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="cardHero" id="card">
+        <form action="player.html" method="get" id="user-form">
+            <span class="close">&times;</span>
+            <input type="text" name="username" id="inputName" placeholder="username">
+            <img id="modalImage">
+            <p class="statHero" id="namechar"></p>
+            <p class="statHero" id="attchar"></p><span>x ATK</span>
+            <p class="statHero" id="defchar"></p><span>x DEF</span>
+            <p class="statHero">200 PV</p>
+            <button type="submit" class="btnSubmit">ENREGISTRER</button>
+        </form>
+    </div>
+    <script src="player.js"></script>
+</body>
+</html>
