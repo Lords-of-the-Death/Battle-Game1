@@ -1,128 +1,237 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body{
-    background-image: url('../img/arena_jpg/createTeam.jpg');
-    background-repeat: no-repeat;
-    /*background-attachment: fixed;*/
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-    overflow: hidden;
-}
-.navBtn{
-    display: flex;
-    justify-content: space-between;
-    margin: 10px 10px 0px 10px;
-}
-.btnTop{
-    width: 200px;
-    height: 50px;
-    border-radius: 50px;
-    background-color: #D3A94C;
-    border: 3px solid #D3A94C;
-}
-h1{
-    background-color: black;
-    color: #D3A94C;
-    width: 300px;
-    padding: 5px;
-    border: 3px solid #D3A94C;
-    margin: 0px auto;
-    position: relative;
-    border-radius: 50px;
-    top: -25px;
-}
-.midCard{
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    border: 3px solid #D3A94C;
-    color: #D3A94C;
-    width: 500px;
-    height: 650px;
-    margin: 0px auto;
-    border-radius: 10%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.buff{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin: 5px 40px;
-}
-.buff p{
-    margin-left: 20px;
-}
-.table{
-    width: 400px;
-    height: 400px;
-    background-color: rgba(245, 245, 245, 0.5);
-    margin: 45px auto;
-}
-.teamBuff{
-    width: 250px;
-    height: 100px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #D3A94C;
-    border: 3px solid #D3A94C;
-    border-radius: 25px;
-    text-align: center;
-    font-size: 40px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    padding: 10px;
-    align-items: center;
-}
-.teamBuff p{
-    margin: 20px auto;
-}
-.coprs{
-    display: flex;
-    flex-direction: row;
-}
-.equipe{
-    width: 400px;
-    height: 550px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #D3A94C;
-    border: 3px solid #D3A94C;
-    border-radius: 25px;
-    margin-top: 30px;
-}
-.ecar{
-    margin: 20px 90px;
-    text-align: center;
-}
-.viderTeam{
-    width: 90%;
-    color: #D3A94C;
-    border-radius: 50px;
-    border: 3px solid #D3A94C;
-    background: #A30000;
-    display: block;
-    margin: 14px auto;
-}
-.lancer{
-    width: 287px;
-    height: 92px;
-    border-radius: 50px;
-    margin-top: 15px;
-    font-size: 25px;
-    background-color: #00660A;
-    color: #D3A94C;
-    position: absolute;
-    bottom: 100px;
-    border: 3px solid #D3A94C;
+@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
+
+:root {
+	--marron: #a30000;
+	--noir: #000;
+	--bord: #d3a94c;
+	--vert: #00660a;
+	--rouge: #ff0000;
 }
 
-.listPerso{
-    background-color: #ccc;
-    padding: 1px;
-    width: 100%;
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: url(./asset/Fond-team.jpg) center/cover;
+	min-height: 100vh;
+	overflow: hidden;
+}
+
+.banner {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+.button {
+	width: 250px;
+	height: 100px;
+	flex-shrink: 0;
+	border-radius: 50px;
+	border: 1px solid var(--noir);
+	background: var(--bord);
+	color: var(--noir);
+	text-align: center;
+	font-family: Metal Mania;
+	font-size: 50px;
+	font-weight: 400;
+	padding-top: 15px;
+	margin-top: 42px;
+}
+
+#buttong {
+	margin-left: 25px;
+}
+
+#buttond {
+	margin-right: 25px;
+}
+
+a {
+	text-decoration: none;
+}
+
+.cardsTeams {
+	display: flex;
+	justify-content: space-between;
+}
+
+.cardTeam1 {
+	width: 400px;
+	height: 150px;
+	flex-shrink: 0;
+	border-radius: 25px;
+	border: 5px solid var(--bord);
+	background: rgba(0, 0, 0, 0.5);
+	margin: 2rem;
+}
+
+.cardTeam2 {
+	width: 400px;
+	height: 150px;
+	flex-shrink: 0;
+	border-radius: 25px;
+	border: 5px solid  var(--bord);
+	background: rgba(0, 0, 0, 0.5);
+	margin: 2rem;
+}
+
+.cardTeamText {
+	display: flex;
+	margin-left: 60%;
+	margin-top: 10%;
+	width: 133px;
+	height: 61px;
+	flex-shrink: 0;
+	color: var(--bord);
+	text-align: center;
+	font-family: Metal Mania;
+	font-size: 40px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+
+.cardsEmpty {
+	display: flex;
+	justify-content: space-between;
+}
+
+.cardEmpty1 {
+	width: 400px;
+	height: 480px;
+	flex-shrink: 0;
+	border-radius: 25px;
+	border: 5px solid var(--bord);
+	background: rgba(0, 0, 0, 0.5);
+	margin: 2rem;
+}
+
+.cardEmpty2 {
+	width: 400px;
+	height: 480px;
+	flex-shrink: 0;
+	border-radius: 25px;
+	border: 5px solid var(--bord);
+	background: rgba(0, 0, 0, 0.5);
+	margin: 2rem;
+}
+
+.cardEmpty1 {
+	padding-top: 10px;
+	display: flex;
+	justify-content: center;
+}
+
+.cardEmpty2 {
+	padding-top: 10px;
+	display: flex;
+	justify-content: center;
+}
+
+.cardEmptyText {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Metal Mania', cursive;
+	color: var(--bord);
+	cursor: pointer;
+	font-size: 30px;
+	width: 300px;
+	height: 50px;
+	flex-shrink: 0;
+	border-radius: 50px;
+	border: 5px solid var(--bord);
+	background: var(--marron);
+}
+
+.cardsBattle {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+
+.cardBattle {
+    display: flex;
+	justify-content: center;
+	top: 0;
+	width: 800px;
+	height: 525px;
+	flex-shrink: 0;
+	border-radius: 50px;
+	border: 5px solid var(--bord);
+	background: rgba(0, 0, 0, 0.5);
+	position: relative;
+}
+
+.cardsBuff {
+	display: flex;
+	justify-content: space-between;
+}
+
+.cardBuff {
+    width: 800px;
+	height: 200px;
+	flex-shrink: 0;
+	border-radius: 25px;
+	border: 5px solid var(--bord);
+	background: rgba(0, 0, 0, 0.5);
+	margin: 2rem; 
+}
+
+.cardBuffText {
+    display: flex;
+    justify-content: center;
+	flex-shrink: 0;
+	color: var(--bord);
+	text-align: center;
+	font-family: Metal Mania;
+	font-size: 40px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+
+.img_container {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    padding-top: .6rem;
+}
+
+.img_text {
+    color: var(--bord);
+    text-align: center;
+}
+.btn {
+    display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 110px;
+	height: 50px;
+	flex-shrink: 0;
+	border-radius: 50px;
+	border: 5px solid var(--bord);
+	background: var(--vert);
+	position: absolute;
+	bottom: 20px; /* Espacement du bas */
+	right: 45%; 
+}
+
+.btn_text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--bord);
+    font-family: Metal Mania;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
