@@ -50,10 +50,8 @@ document.getElementById('user-form').addEventListener('submit', function(event) 
     event.preventDefault(); // Empêcher le formulaire de se soumettre normalement
     
     const inputName = document.getElementById('inputName').value;
-    const randomDef = Math.floor(Math.random() * (100 - 50 + 1)) + 50;
-    const Deef = randomDef * defchar.innerHTML;
-    const randomAtt = Math.floor(Math.random() * (100 - 50 + 1)) + 50;
-    const Attk = randomAtt  * attchar.innerHTML;
+    const Deef = defchar.innerHTML;
+    const Attk = attchar.innerHTML;
     const level = 1;
 
     const userData = {

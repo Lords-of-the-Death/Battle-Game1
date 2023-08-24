@@ -9,9 +9,12 @@ fetch("http://localhost:8080/all",{
 .then(data => handlePlayer(data))
 function handlePlayer(data) {
     let list = document.getElementById('list')
-    data.forEach((e) => { list.innerHTML += `<td class="listPerso">${e.NamePlayer}</td>
-                                            <td class="listPerso">${e.LevelPlayer}</td>
-                                            <td class="listPerso">${e.AttPlayer}</td>
-                                            <td class="listPerso">${e.DefPlayer}</td>`
+    data.forEach((e) => { list.innerHTML += `<tr>
+                                                <td class="listPerso">${e.NamePlayer}</td>
+                                                <td class="listPerso">${e.LevelPlayer}</td>
+                                                <td class="listPerso">${e.AttPlayer}</td>
+                                                <td class="listPerso">${e.DefPlayer}</td>
+                                                <td class="listPerso">${e.IdPerso }</td>
+                                            </tr>`
 })}
 
