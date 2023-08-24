@@ -9,15 +9,15 @@ const conn = mysql.createConnection({
 // User
 const createPlayer = (req, res) => {
   // utilise req.body de body-parser
-  const { NamePlayer, AttPlayer, DefPlayer, LevelPlayer, idPerso } = req.body;
+  const { NamePlayer, AttPlayer, DefPlayer, LevelPlayer } = req.body;
   // vérifier si les champs sont remplis
-  if (!NamePlayer || !AttPlayer || !DefPlayer || !LevelPlayer || !idPerso) {
+  if (!NamePlayer || !AttPlayer || !DefPlayer || !LevelPlayer) {
     return res.status(400).json({
       error: 'donnée manquante',
     })
   }
-  const query = 'INSERT INTO player (NamePlayer, AttPlayer, DefPlayer, LevelPlayer, idPerso) VALUES (?,?,?,?,?)';
-  conn.query(query, [ NamePlayer, AttPlayer, DefPlayer, LevelPlayer, idPerso ], (err) => {
+  const query = 'INSERT INTO player (NamePlayer, AttPlayer, DefPlayer, LevelPlayer) VALUES (?,?,?,?)';
+  conn.query(query, [ NamePlayer, AttPlayer, DefPlayer, LevelPlayer ], (err) => {
     if (err) {
       console.error('erreur lors de l\'insertion des données : ' + err);
       res.status(500).json({ error: 'erreur lors de l\'insertion des données' });
@@ -28,34 +28,37 @@ const createPlayer = (req, res) => {
 };
 
 const getAllPlayer = (req, res) => {
-  const query = 'SELECT * FROM `player`';
-  conn.query(query, (err, result) => {
-    if (err) {
-      console.error('Erreur de la récupération des données ' + err);
-      res.status(500).json({ error: 'Erreur lors de la récupération des données' });
-    } else {
-      res.status(200).json(result);
-    }
-  })
+    const query = 'SELECT * FROM `player`';
+    conn.query(query, (err, result) => {
+      if (err) {
+        console.error('Erreur de la récupération des données ' + err);
+        res.status(500).json({ error: 'Erreur lors de la récupération des données dans getAllPlayer' });
+      } else {
+        res.status(200).json(result);
+      }
+    })
 
-};
+  }
 
-const getPerso = (req, res) => {
-  const query = "SELECT * FROM `perso` WHERE idPerso = ?";
-  conn.query(query, [req.params.id], (err, result) => {
-    if (err) {
-      console.error('Erreur de la récupération des données ' + err);
-      res.status(500).json({ error: 'Erreur lors de la récupération des données' });
-    } else {
-      res.status(200).json(result);
-    }
-  })
 
-};
+  const getTOP5 = (req,res) => {
+    const query ='select * FROM top';
+    conn.query(query, (err, result) => {
+      if (err) {
+        console.error('Erreur de la récupération des données ' + err);
+        res.status(500).json({ error: 'Erreur lors de la récupération des données dans getTOP5' });
+      } else {
+        res.status(200).json(result);
+      }
+    })
+
+  }
+
+
 
 
 module.exports = {
   createPlayer,
   getAllPlayer,
-  getPerso
+  getTOP5
 };
