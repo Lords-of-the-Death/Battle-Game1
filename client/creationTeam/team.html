@@ -1,73 +1,132 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>createTeam</title>
-    <link rel="stylesheet" href="team.css">
-</head>
-<body>
-    <nav class="navBtn">
-        <button class="btnTop" type="button">TEAM</button>        
-        <button class="btnTop" type="button">RETURN</button>
-    </nav>
-    <div class="coprs">
-        <div class="ecar">
-            <div class="teamBuff">
-                <img src="../../image/buff/attack.png" alt="attack">
-                <p>TEAM 1</p>
-            </div>
-            <div class="equipe">
-                <button class="viderTeam">empty</button>
-            </div>
-        </div>
-        
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../creationTeam/team.css" />
+		<title>createTeam</title>
+	</head>
+	<body>
+		<div class="banner">
+			<div class="button" id="buttong">
+				<a href="../creationPlayer/player.html">Create</a>
+			</div>
+			<div class="button" id="buttond">
+				<a href="../index.html">Return</a>
+			</div>
+		</div>
+		<div class="cardsTeams">
+			<div class="cardTeam1">
+				<div class="cardTeamText">TEAM 1</div>
+			</div>
+			<div class="cardsBuff">
+				<div class="cardBuff">
+					<div class="cardBuffText">SELECT YOUR BUFFS</div>
+					<div class="img_container">
+						<div class="img_container1">
+							<img
+								src="./asset/gauche.png"
+								width="20px"
+								height="20px"
+								alt="fleche"
+								id="fleche"
+								class="buff-epee"
+							/>
+							<img
+								src="./asset/epee.png"
+								width="60px"
+								height="60px"
+								alt="epee"
+								id="epee"
+								class="buff"
+							/>
 
-        <div class="midCard">
-                <h1>Select your buffs</h1>
-                <div class="buff">
-                    <img src="../../image/buff/attack.png" alt="attack">
-                    <p>DGT CRIT +40%</p>
-                </div>
-                <div class="buff">
-                    <img src="../../image/buff/life.png" alt="life">
-                    <p>Orbe +15% PV</p>
-                </div>
-                <div class="buff">
-                    <img src="../../image/buff/shield.png" alt="shield">
-                    <p>Shield +20% déf</p>
-                </div>
-                <div class="table">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th class="listPerso">PSEUDO</th>
-                                <th class="listPerso">LVL</th>
-                                <th class="listPerso">ATK</th>
-                                <th class="listPerso">DEF</th>
-                                <th class="listPerso">ID</th>
-                            </tr>
-                        </thead>
-                        <tbody id="list"></tbody>
-                    </table>
-                </div>
-                <button class="lancer" >start</button>
-        </div>
+							<img
+								src="./asset/droite.png"
+								width="20px"
+								height="20px"
+								alt="fleche"
+								id="fleche"
+								class="buff-epee"
+							/>
+							<div class="img_text">DGT CRIT +40%</div>
+						</div>
+						<div class="img_container2">
+							<img
+								src="./asset/gauche.png"
+								width="20px"
+								height="20px"
+								alt="fleche"
+								id="fleche"
+								class="buff-epee"
+							/>
+							<img
+								src="./asset/bouclier.png"
+								width="60px"
+								height="60px"
+								alt="bouclier"
+								id="bouclier"
+								class="buff"
+							/>
+							<img
+								src="./asset/droite.png"
+								width="20px"
+								height="20px"
+								alt="fleche"
+								id="fleche"
+								class="buff-epee"
+							/>
+							<div class="img_text">Shield +20% déf</div>
+						</div>
+						<div class="img_container3">
+							<img
+								src="./asset/gauche.png"
+								width="20px"
+								height="20px"
+								alt="fleche"
+								id="fleche"
+								class="buff-epee"
+							/>
+							<img
+								src="./asset/cercle.png"
+								width="60px"
+								height="60px"
+								alt="cercle"
+								id="cercle"
+								class="buff"
+							/>
+							<img
+							src="./asset/droite.png"
+								width="20px"
+								height="20px"
+								alt="fleche"
+								id="fleche"
+								class="buff-epee"
+							/>
+							<div class="img_text">Orbe +15% PV</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="cardTeam2">
+				<div class="cardTeamText">TEAM 2</div>
+			</div>
+		</div>
+		<div class="cardsEmpty">
+			<div class="cardEmpty1">
+				<div class="cardEmptyText">EMPTY TEAM</div>
+			</div>
+			<div class="cardsBattle">
+				<div class="cardBattle">
+					<div class="btn">
+						<div class="btn_text">START</div>
+					</div>
+				</div>
+			</div>
 
-        
-
-        <div class="ecar">
-            <div class="teamBuff">
-                <img src="../../image/buff/shield.png" alt="shield">
-                <p>TEAM 2</p>
-            </div>
-            <div class="equipe">
-                <button class="viderTeam">empty</button>
-            </div>
-        </div>
-
-    </div>
-    
-    <script src="team.js"></script>
-</body>
+			<div class="cardEmpty2">
+				<div class="cardEmptyText">EMPTY TEAM</div>
+			</div>
+		</div>
+	</body>
 </html>
