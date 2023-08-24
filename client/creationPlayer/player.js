@@ -4,6 +4,8 @@ const modal = document.getElementById("card");
 const modalImage = document.getElementById("modalImage");
 const images = document.querySelectorAll(".modal-image");
 const closeModal = document.querySelector(".close");
+let Attk = 0;
+let Deef = 0;
 
 if (modalImage.src) {
     modal.style.display = "block";
@@ -36,30 +38,35 @@ images.forEach(image => {
             namechar.innerHTML = data[0].NamePerso
 
             let attchar = document.getElementById('attchar')
-            attchar.innerHTML = data[0].AttPerso
+            attchar.innerHTML = "ATTACK" + data[0].AttPerso
+            Attk = data[0].AttPerso
 
             let defchar = document.getElementById('defchar')
-            defchar.innerHTML = data[0].DefPerso            
+            defchar.innerHTML = "DEF" + data[0].DefPerso 
+            Deef = data[0].DefPerso          
 
         }
     });
 });
 
-document.getElementById('user-form').addEventListener('submit', function(event) {
 
+
+
+document.getElementById('user-form').addEventListener('submit', function(event) {
+    
     event.preventDefault(); // Empêcher le formulaire de se soumettre normalement
     
+    
     const inputName = document.getElementById('inputName').value;
-    const Deef = defchar.innerHTML;
-    const Attk = attchar.innerHTML;
-    const level = 1;
+    const level =1;
+    const idPerso = modalImage.alt;
 
     const userData = {
         NamePlayer: inputName,
         AttPlayer: Attk,
         DefPlayer: Deef,
         LevelPlayer: level,
-        idPerso: modalImage.alt
+        idPerso: idPerso
     };
     
     fetch('http://localhost:8080/register', {
@@ -84,6 +91,6 @@ document.getElementById('user-form').addEventListener('submit', function(event) 
 });
 
 
-closeModal.addEventListener("click", () => {
+/*closeModal.addEventListener("click", () => {
     modal.style.display = "none";
-});
+});*/
