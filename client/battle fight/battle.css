@@ -1,16 +1,27 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
+
+:root{
+    --marron:#A30000;
+    --noir:#000;
+    --bord:#D3A94C;
+    --vert:#00660A;
+    --rouge:#FF0000;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 body{
-    background-image: url('../img/arena_jpg/arena2.jpg');
-    background-repeat: no-repeat;
-    /*background-attachment: fixed;*/
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
+    background: url(./asset/Fond-arena1.jpg) center/cover;
+    min-height: 100vh;
     overflow: hidden;
+}
+h1{
+    font-family: Metal Mania;
+    color: var(--bord);
+    font-size: 50px;
 }
 .top{
     display: flex;
@@ -73,13 +84,14 @@ body{
     height: 152px;
     
 }
-.infoGame{
+#infoGame{
     width: 500px;
     height: 500px;
     background-color: rgba(0, 0, 0, 0.50);
     border-radius: 30px;
     margin: 10px;
     border:5px solid #D3A94C;
+    display: none;
 }
 .barLife{
     width: 100%;
@@ -88,65 +100,75 @@ body{
     bottom: -200px;
     position: absolute;
     left: -130px;
+    transition: all 0.5s ease;
 }
 .hero2T1{
     bottom: -75px;
     left: -25px;
     position: absolute;
+    transition: all 0.5s ease;
 }
 .hero3T1{
-    bottom: -200px;
+    bottom: -76px;
     position: absolute;
-    left: -380px;
+    left: -235px;
+    transition: all 0.5s ease;
 }
 .hero4T1{
-    bottom: -75px;
+    bottom: -200px;
     position: absolute;
-    left: -250px;
+    left: -340px;
+    transition: all 0.5s ease;
 }
 .hero5T1{
     bottom: -200px;
     position: absolute;
     left: 100px;
+    transition: all 0.5s ease;
 }
 .hero1T2{
     bottom: -40px;
     position: absolute;
-    left: 180px;
+    left: -40px;
+    transition: all 0.5s ease;
 }
 .hero2T2{
-    bottom: -40px;
+    bottom: 75px;
     position: absolute;
-    left: -40px;
+    left: 65px;
+    transition: all 0.5s ease;
 }
 .hero3T2{
     bottom: 75px;
     position: absolute;
     left: -150px;
+    transition: all 0.5s ease;
 }
 .hero4T2{
     bottom: -40px;
     position: absolute;
-    left: -270px;
+    left: 175px;
+    transition: all 0.5s ease;
 }
 .hero5T2{
-    bottom: 75px;
+    bottom: -40px;
     position: absolute;
-    left: 75px;
+    left: -270px;
+    transition: all 0.5s ease;
 }
 .lifeBarT1{
-    width: 50px;
-    height: 10px;
+    width: 100px;
+    height: 15px;
     position: absolute;
-    left: 60px;
+    left: 35px;
     background-color: #00660A;
     border: 2px solid #000;
 }
 .lifeBarT2{
-    width: 50px;
-    height: 10px;
+    width: 100px;
+    height: 15px;
     position: absolute;
-    left: 75px;
+    left: 45px;
     background-color: #00660A;
     border: 2px solid #000;
 }
