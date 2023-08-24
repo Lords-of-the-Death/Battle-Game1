@@ -63,7 +63,7 @@ go.addEventListener('click', function () {
                 team1img[currentItemIndex - 1].src = reset3;
                 moveNextItem();
             }
-            }, 3000); // Attendre 3 secondes
+            }, 3000);
         }
     }
     function moveNextItem2() {
@@ -83,7 +83,7 @@ go.addEventListener('click', function () {
                 team2img[currentItemIndex2 - 1].src = reset33;
                 moveNextItem2();
             }
-            }, 3000); // Attendre 3 secondes
+            }, 3000);
         }
     }
 
