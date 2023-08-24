@@ -1,25 +1,27 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 @import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
 
 :root{
+    --marron:#A30000;
+    --noir:#000;
     --bord:#D3A94C;
+    --vert:#00660A;
+    --rouge:#FF0000;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 body{
-    background-image: url('../img/arena_jpg/createPlayer.jpg');
-    background-repeat: no-repeat;
-    /*background-attachment: fixed;*/
-    /*background-position: center;*/
-    background-size: cover;
-    background-attachment: fixed;
+    background: url(./asset/fond-player.jpg) center/cover;
+    min-height: 100vh;
     overflow: hidden;
-    font-family: Metal Mania;
 }
 h1{
     position: absolute;
+    font-family: Metal Mania;
+    color: var(--bord);
     top: 9%;
     left: 22%;
 }
@@ -34,7 +36,7 @@ h1{
     flex-shrink: 0;
     border-radius: 50px;
     background: var(--bord);
-    color: #000;
+    color: var(--noir);
     text-align: center;
     font-family: Metal Mania;
     font-size: 50px;
@@ -52,13 +54,14 @@ a{
     height: 750px;
     top: 15%;
     left: 10%;
-    border: 5px solid #D3A94C;
+    border: 5px solid var(--bord);
     border-radius: 50px;
     background-color: rgba(217, 217, 217, 0.75);
 }
 td img{
-    width: 195px;
+    width: 140px;
     height: 140px;
+    margin:0 30px 0 30px;
 }
 .cardHero{
     position: absolute;
@@ -66,9 +69,9 @@ td img{
     height: 750px;
     top: 15%;
     right: 10%;
-    border: 5px solid #D3A94C;
+    border: 5px solid var(--bord);
     border-radius: 50px;
-    background-color: rgba(217, 217, 217, 0.75);
+    background-color: rgba(0, 0, 0, 0.25);
     display: flex;
     flex-direction: column;
     align-items: center;
