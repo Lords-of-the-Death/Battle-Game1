@@ -52,6 +52,33 @@ h1{
     font-weight: bold;
     font-size: 30px;
 }
+.restart{
+    width: 200px;
+    height: 100px;
+    background-color: #00660A;
+    color: #D3A94C;
+    border-radius: 50px;
+    border: 3px solid #D3A94C;
+    font-weight: bold;
+    font-family: Metal Mania;
+    color: var(--bord);
+    font-size: 30px;
+}
+.finish{
+    width: 200px;
+    height: 100px;
+    background-color: #A30000;
+    color: #D3A94C;
+    border-radius: 50px;
+    border: 3px solid #D3A94C;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: Metal Mania;
+    color: var(--bord);
+}
+#finFight{
+    display: none;
+}
 .toptop{
     text-align: center;
     font-weight: bold;
@@ -92,6 +119,15 @@ h1{
     margin: 10px;
     border:5px solid #D3A94C;
     display: none;
+    color: #FEFAFA;
+    text-align: center;
+    font-family: Inter;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    overflow-x: none;
+    overflow-y: scroll;
 }
 .barLife{
     width: 100%;
@@ -156,19 +192,39 @@ h1{
     left: -270px;
     transition: all 0.5s ease;
 }
-.lifeBarT1{
+#hero1lb, #hero3lb, #hero5lb, #hero7lb, #hero9lb{
     width: 100px;
     height: 15px;
     position: absolute;
     left: 35px;
     background-color: #00660A;
     border: 2px solid #000;
+    z-index: 2;
 }
-.lifeBarT2{
+.dieBarT1{
+    width: 100px;
+    height: 15px;
+    position: absolute;
+    left: 35px;
+    background-color: #A30000;
+    border: 2px solid #000;
+    z-index: 1;
+}
+#hero2lb, #hero4lb, #hero6lb, #hero8lb, #hero10lb{
     width: 100px;
     height: 15px;
     position: absolute;
     left: 45px;
     background-color: #00660A;
     border: 2px solid #000;
+    z-index: 2;
+}
+.dieBarT2{
+    width: 100px;
+    height: 15px;
+    position: absolute;
+    left: 45px;
+    background-color: #A30000;
+    border: 2px solid #000;
+    z-index: 1;
 }

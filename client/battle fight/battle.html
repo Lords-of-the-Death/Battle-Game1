@@ -7,30 +7,77 @@
     <link rel="stylesheet" href="battle.css">
 </head>
 <body>
-
     <div class="top">
         <div class="buff"><img src="../../image/buff/attack.png" alt="buffATK"></div>
         <div class="toptop">
             <h1>BATTLEFIGHT</h1>
             <button id="go" class="start">GO</button>
-            <div id="infoGame"></div>
+            <div id="infoGame">
+                <ul id="textInfos">
+                    </li>
+                </ul>
+            </div>
+            <div id="finFight">
+                <button class="restart">RESTART</button>
+                <button class="finish">FINISH</button>
+            </div>
         </div>
         <div class="buff"><img src="../../image/buff/shield.png" alt="buffDEF"></div>
     </div>
     <div class="team1">
-        <div id="hero1" class="hero1T1"><div class="lifeBarT1"></div><img id="hero1img" src="../imgperso/axe-female-idle-left.gif" alt="AxeID"></div>
-        <div id="hero3" class="hero2T1"><div class="lifeBarT1"></div><img id="hero3img" src="../imgperso/axe-female-idle-left.gif" alt="AxeID"></div>
-        <div id="hero5" class="hero3T1"><div class="lifeBarT1"></div><img id="hero5img" src="../imgperso/axe-female-idle-left.gif" alt="AxeID"></div>
-        <div id="hero7" class="hero4T1"><div class="lifeBarT1"></div><img id="hero7img" src="../imgperso/axe-female-idle-left.gif" alt="AxeID"></div>
-        <div id="hero9" class="hero5T1"><div class="lifeBarT1"></div><img id="hero9img" src="../imgperso/axe-female-idle-left.gif" alt="AxeID"></div>
+        <div id="hero1" class="hero1T1">
+
+            <div id="hero1lb"></div>
+            <div class="dieBarT1"></div>
+            <img id="hero1img" src="../imgperso/axe-female-idle-left.gif" alt="AxeID"></div>
+
+        <div id="hero3" class="hero2T1">
+
+            <div id="hero3lb"></div>
+            <div class="dieBarT1"></div>
+            <img id="hero3img" src="../imgperso/pyro-male-idle-left.gif" alt="AxeID"></div>
+
+        <div id="hero5" class="hero3T1">
+
+            <div id="hero5lb"></div>
+            <div class="dieBarT1"></div>
+            <img id="hero5img" src="../imgperso/bandage-female-idle-left.gif" alt="AxeID"></div>
+
+        <div id="hero7" class="hero4T1">
+
+            <div id="hero7lb"></div>
+            <div class="dieBarT1"></div>
+            <img id="hero7img" src="../imgperso/dark-female-idle-left.gif" alt="AxeID"></div>
+
+        <div id="hero9" class="hero5T1">
+
+            <div id="hero9lb"></div>
+            <div class="dieBarT1"></div>
+            <img id="hero9img" src="../imgperso/cryo-female-idle-left.gif" alt="AxeID"></div>
     </div>
     <div class="team2">
-        <div id="hero2" class="hero1T2"><div class="lifeBarT2"></div><img id="hero2img" src="../imgperso/axe-female-idle-right.gif" alt="AxeID"></div>
-        <div id="hero4" class="hero2T2"><div class="lifeBarT2"></div><img id="hero4img" src="../imgperso/axe-female-idle-right.gif" alt="AxeID"></div>
-        <div id="hero6" class="hero3T2"><div class="lifeBarT2"></div><img id="hero6img" src="../imgperso/axe-female-idle-right.gif" alt="AxeID"></div>
-        <div id="hero8" class="hero4T2"><div class="lifeBarT2"></div><img id="hero8img" src="../imgperso/axe-female-idle-right.gif" alt="AxeID"></div>
-        <div id="hero10" class="hero5T2"><div class="lifeBarT2"></div><img id="hero10img" src="../imgperso/axe-female-idle-right.gif" alt="AxeID"></div>
-    </div>
+        <div id="hero2" class="hero1T2">
+            <div id="hero2lb"></div>
+            <div class="dieBarT2"></div>
+            <img id="hero2img" src="../imgperso/axe-female-idle-right.gif" alt="AxeID"></div>
+        <div id="hero4" class="hero2T2">
+            <div id="hero4lb"></div>
+            <div class="dieBarT2"></div>
+            <img id="hero4img" src="../imgperso/axe-female-idle-right.gif" alt="AxeID"></div>
+        <div id="hero6" class="hero3T2">
+            <div id="hero6lb"></div>
+            <div class="dieBarT2"></div>
+            <img id="hero6img" src="../imgperso/axe-female-idle-right.gif" alt="AxeID"></div>
+        <div id="hero8" class="hero4T2">
+            <div id="hero8lb"></div>
+            <div class="dieBarT2"></div>
+            <img id="hero8img" src="../imgperso/axe-female-idle-right.gif" alt="AxeID"></div>
+        <div id="hero10" class="hero5T2">
+            <div id="hero10lb"></div>
+            <div class="dieBarT2"></div>
+            <img id="hero10img" src="../imgperso/axe-female-idle-right.gif" alt="AxeID"></div>
+        </div>
+        <div id="r" ></div>
     <script src="battle.js"></script>
 </body>
 </html>
