@@ -16,7 +16,9 @@
 			</div>
 		</div>
 		<div class="cardsTeams">
-			<div class="cardTeam1">
+			<div class="cardTeam1" id="cardTeam1">
+				<div class="cardTeamPic" width="60px" height="60px"></div>
+				
 				<div class="cardTeamText">TEAM 1</div>
 			</div>
 			<div class="cardsBuff">
@@ -24,14 +26,16 @@
 					<div class="cardBuffText">SELECT YOUR BUFFS</div>
 					<div class="img_container">
 						<div class="img_container1">
+							
 							<img
 								src="./asset/gauche.png"
 								width="20px"
 								height="20px"
 								alt="fleche"
-								id="fleche"
-								class="buff-epee"
+								id="fleche-epee-gauche"
+								class="buff-fleche"
 							/>
+							
 							<img
 								src="./asset/epee.png"
 								width="60px"
@@ -46,8 +50,8 @@
 								width="20px"
 								height="20px"
 								alt="fleche"
-								id="fleche"
-								class="buff-epee"
+								id="fleche-epee-droite"
+								class="buff-fleche"
 							/>
 							<div class="img_text">DGT CRIT +40%</div>
 						</div>
@@ -57,8 +61,8 @@
 								width="20px"
 								height="20px"
 								alt="fleche"
-								id="fleche"
-								class="buff-epee"
+								id="fleche-bouclier-gauche"
+								class="buff-fleche"
 							/>
 							<img
 								src="./asset/bouclier.png"
@@ -73,8 +77,8 @@
 								width="20px"
 								height="20px"
 								alt="fleche"
-								id="fleche"
-								class="buff-epee"
+								id="fleche-bouclier-droite"
+								class="buff-fleche"
 							/>
 							<div class="img_text">Shield +20% déf</div>
 						</div>
@@ -84,8 +88,8 @@
 								width="20px"
 								height="20px"
 								alt="fleche"
-								id="fleche"
-								class="buff-epee"
+								id="fleche-cercle-gauche"
+								class="buff-fleche"
 							/>
 							<img
 								src="./asset/cercle.png"
@@ -100,15 +104,16 @@
 								width="20px"
 								height="20px"
 								alt="fleche"
-								id="fleche"
-								class="buff-epee"
+								id="fleche-cercle-droite"
+								class="buff-fleche"
 							/>
 							<div class="img_text">Orbe +15% PV</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="cardTeam2">
+			<div class="cardTeam2" id="cardTeam2">
+				<div class="cardTeamPic" width="60px" height="60px"></div>
 				<div class="cardTeamText">TEAM 2</div>
 			</div>
 		</div>
@@ -128,5 +133,6 @@
 				<div class="cardEmptyText">EMPTY TEAM</div>
 			</div>
 		</div>
+		<script type="module" src="./team.js"></script>
 	</body>
 </html>

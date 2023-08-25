@@ -68,6 +68,9 @@ a {
 	border: 5px solid var(--bord);
 	background: rgba(0, 0, 0, 0.5);
 	margin: 2rem;
+	display:flex;
+	align-items: center;
+    justify-content: space-around;
 }
 
 .cardTeam2 {
@@ -78,15 +81,18 @@ a {
 	border: 5px solid  var(--bord);
 	background: rgba(0, 0, 0, 0.5);
 	margin: 2rem;
+	display:flex;
+	align-items: center;
+    justify-content: space-around;	
 }
 
 .cardTeamText {
-	display: flex;
-	margin-left: 60%;
-	margin-top: 10%;
-	width: 133px;
+	
+	/*margin-left: 100px;
+	margin-top: 10%;*/
+	width: 150px;
 	height: 61px;
-	flex-shrink: 0;
+	flex-shrink: 1;
 	color: var(--bord);
 	text-align: center;
 	font-family: Metal Mania;
@@ -109,6 +115,7 @@ a {
 	border: 5px solid var(--bord);
 	background: rgba(0, 0, 0, 0.5);
 	margin: 2rem;
+	
 }
 
 .cardEmpty2 {
@@ -120,6 +127,9 @@ a {
 	background: rgba(0, 0, 0, 0.5);
 	margin: 2rem;
 }
+
+
+
 
 .cardEmpty1 {
 	padding-top: 10px;
@@ -234,4 +244,10 @@ a {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+}
+
+
+
+.buff-fleche{
+	cursor: pointer;
 }
