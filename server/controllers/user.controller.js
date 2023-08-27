@@ -7,7 +7,7 @@ const conn = mysql.createConnection({
 })
 
 // User
-const createPlayer = (req, res) => {
+/*const createPlayer = (req, res) => {
   // utilise req.body de body-parser
   const { NamePlayer, AttPlayer, DefPlayer, LevelPlayer } = req.body;
   // vérifier si les champs sont remplis
@@ -26,7 +26,7 @@ const createPlayer = (req, res) => {
     }
   });
 };
-
+*/
 const getAllPlayer = (req, res) => {
     const query = 'SELECT * FROM `player`';
     conn.query(query, (err, result) => {
@@ -54,11 +54,61 @@ const getAllPlayer = (req, res) => {
 
   }
 
+  const createPlayer = (req, res) => {
+    // utilise req.body de body-parser
+    const { NamePlayer, AttPlayer, DefPlayer, LevelPlayer, idPerso } = req.body;
+    // vérifier si les champs sont remplis
+    if (!NamePlayer || !AttPlayer || !DefPlayer || !LevelPlayer || !idPerso) {
+      return res.status(400).json({
+        error: 'donnée manquante',
+      })
+
+    }else{
+
+    const query = 'INSERT INTO player (NamePlayer, AttPlayer, DefPlayer, LevelPlayer, idPerso) VALUES (?,?,?,?,?)';
+    conn.query(query, [ NamePlayer, AttPlayer, DefPlayer, LevelPlayer, idPerso ], (err) => {
+      if (err) {
+        console.error(`erreur lors de l'insertion des données : ` + err);
+        res.status(500).json({ error: `erreur lors de l'insertion des données` });
+      } else {
+        res.status(200).json({ message: 'utilisateur enregistré' });
+      }
+    })};
+  };
+
+
+  const getPerso = (req, res) => {
+    const query = "SELECT * FROM perso WHERE idPerso = ?";
+    conn.query(query, [req.params.id], (err, result) => {
+      if (err) {
+        console.error('Erreur de la récupération des données ' + err);
+        res.status(500).json({ error: 'Erreur lors de la récupération des données' });
+      } else {
+        res.status(200).json(result);
+      }
+    })
+  
+  };
+
+  const getPlayerPerso =(req, res) => {
+    const query = 'SELECT `player`.*, LEFT(`perso`.`imgIdlePerso`,LENGTH(`perso`.`imgIdlePerso`)-5) AS personame FROM `player` LEFT JOIN `perso` ON `player`.`IdPerso` = `perso`.`IdPerso`';
+    conn.query(query, (err, result) => {
+      if (err) {
+        console.error('Erreur de la récupération des données ' + err);
+        res.status(500).json({ error: 'Erreur lors de la récupération des données dans getPlayerPerso' });
+      } else {
+        res.status(200).json(result);
+      }
+    })
+  }
+
 
 
 
 module.exports = {
   createPlayer,
   getAllPlayer,
-  getTOP5
+  getTOP5,
+  getPerso,
+  getPlayerPerso
 };
