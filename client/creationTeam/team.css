@@ -15,6 +15,7 @@
 }
 
 body {
+	background-color: black;
 	background: url(./asset/Fond-team.jpg) center/cover;
 	min-height: 100vh;
 	overflow: hidden;
@@ -34,6 +35,24 @@ body {
 	border-radius: 50px;
 	border: 1px solid var(--noir);
 	background: var(--bord);
+	color: var(--noir);
+	text-align: center;
+	font-family: Metal Mania;
+	font-size: 50px;
+	font-weight: 400;
+	padding-top: 15px;
+	margin-top: 42px;
+}
+
+
+.message{
+	display: none;
+	width: 850px;
+	height: 100px;
+	flex-shrink: 0;
+	border-radius: 50px;
+	border: 5px solid var(--bord);
+	background: var(--rouge);
 	color: var(--noir);
 	text-align: center;
 	font-family: Metal Mania;
@@ -109,7 +128,7 @@ a {
 
 .cardEmpty1 {
 	width: 400px;
-	height: 480px;
+	height: 500px;
 	flex-shrink: 0;
 	border-radius: 25px;
 	border: 5px solid var(--bord);
@@ -120,7 +139,7 @@ a {
 
 .cardEmpty2 {
 	width: 400px;
-	height: 480px;
+	height: 500px;
 	flex-shrink: 0;
 	border-radius: 25px;
 	border: 5px solid var(--bord);
@@ -134,20 +153,24 @@ a {
 .cardEmpty1 {
 	padding-top: 10px;
 	display: flex;
-	justify-content: center;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
 }
 
 .cardEmpty2 {
 	padding-top: 10px;
 	display: flex;
-	justify-content: center;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
 }
 
 .cardEmptyText {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-family: 'Metal Mania', cursive;
+	font-family: 'Metal Mania';
 	color: var(--bord);
 	cursor: pointer;
 	font-size: 30px;
@@ -246,8 +269,93 @@ a {
     line-height: normal;
 }
 
-
-
 .buff-fleche{
 	cursor: pointer;
 }
+
+
+.wraptable{
+	background-color: rgba(245, 245, 245, 0.50);
+	border: 5px solid var(--bord);
+	width: 700px;
+	margin-top: 20px;
+	height: 400px;
+	display: block;
+	overflow-y: scroll;
+}
+
+table {
+	display: grid;
+	border-collapse: collapse;
+	width: auto;
+	grid-template-columns: 1fr 3fr 1.5fr 1.5fr 1.5fr 2fr 1fr ;
+  }
+
+  thead,
+tbody,
+tr {
+  display: contents;
+}
+
+
+th,
+td {
+  padding: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+th {
+  position: sticky;
+  top: 0;
+  font-family: 'Metal Mania';
+  background: var(--vert);
+  text-align: left;
+  font-weight:800;
+  font-size: 1.1rem;
+}
+
+
+td {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: 'Metal Mania';
+  color: var(--noir);
+}
+
+tr{
+	background: rgba(0, 0, 0, 0.35);
+}
+
+tr:nth-child(odd) td{
+	background: #f8f6ff;
+}
+
+tr:nth-child(even) td {
+	background:#584d80;
+  }
+
+
+  .playerT1,
+  .playerT2{
+	width: 145px;
+    height: 140px;
+  }
+
+  .blank{
+	color: wheat;
+	height: 140px;
+	width: 72px;
+  }
+
+  .playerTeam1,
+  .playerTeam2{
+	display: flex;
+    flex-direction: column;
+  }
+
+  .modal-image{
+	height: 125px;
+	width: 120px;
+  }
