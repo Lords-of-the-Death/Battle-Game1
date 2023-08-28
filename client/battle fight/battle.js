@@ -18,3 +18,6 @@ function changeArena() {
 generateButton.addEventListener('click', changeWallpaper);
 
 changeWallpaper();
+
+// ctrl + ù = ouvrir le terminal
+// crtl + l = supprimer tout dans le terminal 
