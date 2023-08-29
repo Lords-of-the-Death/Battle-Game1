@@ -102,6 +102,19 @@ const getAllPlayer = (req, res) => {
     })
   }
 
+  const getBattle =(req, res) => {
+    const query = 'SELECT * FROM battledata';
+    conn.query(query, (err, result) => {
+      if (err) {
+        console.error('Erreur de la récupération des données ' + err);
+        res.status(500).json({ error: 'Erreur lors de la récupération des données dans getBattle' });
+      } else {
+        res.status(200).json(result);
+      }
+    })
+  }
+
+
 
 
 
@@ -110,5 +123,6 @@ module.exports = {
   getAllPlayer,
   getTOP5,
   getPerso,
-  getPlayerPerso
+  getPlayerPerso,
+  getBattle
 };

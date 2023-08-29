@@ -67,7 +67,7 @@ const url = 'http://localhost:8080/getplayerperso';
 
 document.addEventListener("DOMContentLoaded", () => {
   fetchData()
-    .then((data) => { console.log() ; })
+    .then((data) => { console.log(data) ; })
     .catch((error) => { console.log("Erreur de récupération des données : " + error.message); });
 });
 
@@ -98,6 +98,7 @@ async function fetchData() {
               addPlayer(user,'right');
           })
       });
+     
   })
  
   .catch((error) => {
@@ -114,13 +115,13 @@ function createRow(user) {
   let ligneTb = document.createElement("tr");
   ligneTb.classList.add("lignData");
   
-  let addHTML = '<td><img src="./asset/gauche.png" width="20px" height="20px" alt="fleche" id="left'+ user.IdPlayer +'" class="player-fleche-left"/></td>';
+  let addHTML = '<td><div id="left'+ user.Idplayer +'"><img src="./asset/gauche.png" width="20px" height="20px" alt="fleche" class="player-fleche-left"/></div></td>';
   addHTML += '<td>' + user.NamePlayer + '</td>';
   addHTML += '<td>' + user.AttPlayer + '</td>';
   addHTML += '<td>' + user.DefPlayer + '</td>';
   addHTML += '<td>' + user.LevelPlayer + '</td>';
   addHTML += '<td>' + user.personame + '</td>';
-  addHTML += '<td><img src="./asset/droite.png" width="20px" height="20px" alt="fleche" id="right'+ user.IdPlayer +'" class="player-fleche-right"/></td>';
+  addHTML += '<td><div id="right'+ user.Idplayer +'"><img src="./asset/droite.png" width="20px" height="20px" alt="fleche" class="player-fleche-right"/></div></td>';
 
   
   ligneTb.innerHTML = addHTML;
@@ -144,16 +145,26 @@ let team2Right = [];
 
 
 function addPlayer(user, direction){
+
+  document.getElementById("right"+user.Idplayer).style.display ="none";
+  document.getElementById("left"+user.Idplayer).style.display ="none";
+
     if(direction ==="left"){
-      if (team1Left.length <=5){
-        team1Left.push([user.IdPlayer,user.personame])
+      if (team1Left.length <=4){
+        team1Left.push([user.Idplayer,user.personame])
+        console.log(team1Left);
+        fillTeam();
+
+        
       }else{
         message('La liste est pleine')
       }
       
     }else {
-      if (team2Right <=5){
-        team2Right.push([user.IdPlayer,user.personame])
+      if (team2Right.length <=4){
+        team2Right.push([user.Idplayer,user.personame])
+        console.log(team2Right);
+        fillTeam();
       }else{
         message('La liste est pleine')
       }
@@ -176,8 +187,27 @@ function message(mesText){
 
 function fillTeam(){
   
+  let i;
+  let addHTML;
+
+  for(i=0;i<=team1Left.length-1;++i ){
+
+    console.log('team left ',team1Left[i][1])
+    
+    addHTML = '<img src="../imgperso/'+team1Left[i][1] +'-idle-left.gif"id="3" class="modal-image"></img>'
+    document.querySelector('.playerT1-'+team1Left.length).innerHTML = addHTML;
+
+  
+  }
+  
+  for(i=0;i<=team2Right.length-1;++i ){
+    addHTML = '<img src="../imgperso/'+team2Right[i][1] +'-idle-right.gif"id="3" class="modal-image"></img>'
+    document.querySelector('.playerT2-'+team2Right.length).innerHTML = addHTML;
+  }
 
 }
+
+
 
 
 
