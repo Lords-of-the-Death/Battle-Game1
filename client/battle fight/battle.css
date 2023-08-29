@@ -85,32 +85,6 @@ h1{
     font-size: 30px;
     color: #D3A94C;
 }
-.team2{
-    position: absolute;
-    right: 25%;
-    bottom: 20%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.team2 img{
-    width: 184px;
-    height: 152px;
-    position: absolute;
-}
-.team1{
-    position: absolute;
-    left: 25%;
-    bottom: 20%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.team1 img{
-    width: 184px;
-    height: 152px;
-    
-}
 #infoGame{
     width: 500px;
     height: 500px;
@@ -129,102 +103,18 @@ h1{
     overflow-x: none;
     overflow-y: scroll;
 }
-.barLife{
-    width: 100%;
+
+.contain{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-.hero1T1{
-    bottom: -200px;
-    position: absolute;
-    left: -130px;
-    transition: all 0.5s ease;
-}
-.hero2T1{
-    bottom: -75px;
-    left: -25px;
-    position: absolute;
-    transition: all 0.5s ease;
-}
-.hero3T1{
-    bottom: -76px;
-    position: absolute;
-    left: -235px;
-    transition: all 0.5s ease;
-}
-.hero4T1{
-    bottom: -200px;
-    position: absolute;
-    left: -340px;
-    transition: all 0.5s ease;
-}
-.hero5T1{
-    bottom: -200px;
-    position: absolute;
-    left: 100px;
-    transition: all 0.5s ease;
-}
-.hero1T2{
-    bottom: -40px;
-    position: absolute;
-    left: -40px;
-    transition: all 0.5s ease;
-}
-.hero2T2{
-    bottom: 75px;
-    position: absolute;
-    left: 65px;
-    transition: all 0.5s ease;
-}
-.hero3T2{
-    bottom: 75px;
-    position: absolute;
-    left: -150px;
-    transition: all 0.5s ease;
-}
-.hero4T2{
-    bottom: -40px;
-    position: absolute;
-    left: 175px;
-    transition: all 0.5s ease;
-}
-.hero5T2{
-    bottom: -40px;
-    position: absolute;
-    left: -270px;
-    transition: all 0.5s ease;
-}
-#hero1lb, #hero3lb, #hero5lb, #hero7lb, #hero9lb{
-    width: 100px;
-    height: 15px;
-    position: absolute;
-    left: 35px;
+
+#life{
     background-color: #00660A;
-    border: 2px solid #000;
-    z-index: 2;
-}
-.dieBarT1{
-    width: 100px;
+    border: 1px solid #000;
     height: 15px;
-    position: absolute;
-    left: 35px;
-    background-color: #A30000;
-    border: 2px solid #000;
-    z-index: 1;
-}
-#hero2lb, #hero4lb, #hero6lb, #hero8lb, #hero10lb{
-    width: 100px;
-    height: 15px;
-    position: absolute;
-    left: 45px;
-    background-color: #00660A;
-    border: 2px solid #000;
-    z-index: 2;
-}
-.dieBarT2{
-    width: 100px;
-    height: 15px;
-    position: absolute;
-    left: 45px;
-    background-color: #A30000;
-    border: 2px solid #000;
+    width: 80%;
+    margin: 0 auto;
     z-index: 1;
 }
