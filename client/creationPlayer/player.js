@@ -58,7 +58,7 @@ document.getElementById('user-form').addEventListener('submit', function(event) 
     
     
     const inputName = document.getElementById('inputName').value;
-    const level =1;
+    const level = 10;
     const idPerso = modalImage.alt;
 
     const userData = {

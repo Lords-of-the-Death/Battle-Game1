@@ -47,9 +47,9 @@ body {
 
 .message{
 	display: none;
+	justify-content: center;
 	width: 850px;
 	height: 100px;
-	flex-shrink: 1;
 	border-radius: 50px;
 	border: 5px solid var(--bord);
 	background: var(--rouge);
@@ -60,7 +60,6 @@ body {
 	font-weight: 400;
 	padding-top: 15px;
 	margin-top: 42px;
-	text-align: center;
 }
 
 #buttong {
@@ -167,7 +166,8 @@ a {
     align-items: center;
 }
 
-.cardEmptyText {
+.cardEmptyText1,
+.cardEmptyText2 {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -258,7 +258,7 @@ a {
 	right: 45%; 
 }
 
-.btn_text {
+.btn_start {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -268,6 +268,7 @@ a {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+	cursor: pointer;
 }
 
 .buff-fleche{
