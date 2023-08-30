@@ -173,7 +173,7 @@ const getAllPlayer = (req, res) => {
 
     }else{
 
-    const query = 'INSERT INTO `appartenirteam1`( `IdTeam1`, `Idplayer`) VALUES (?,?)';
+    const query = 'INSERT INTO `appartenirteam1`(`IdTeam1`, `Idplayer`) VALUES (?,?)';
     conn.query(query, [ IdTeam1, Idplayer ], (err) => {
       if (err) {
         console.error(`erreur lors de l'insertion des données createTeamPlayer1 : ` + err);
@@ -198,8 +198,8 @@ const getAllPlayer = (req, res) => {
     const query = 'INSERT INTO `appartenirteam2`( `IdTeam2`, `Idplayer`) VALUES (?,?)';
     conn.query(query, [ IdTeam2, Idplayer ], (err) => {
       if (err) {
-        console.error(`erreur lors de l'insertion des données createTeamPlayer1 : ` + err);
-        res.status(500).json({ error: `erreur lors de l'insertion des données createTeamPlayer1` });
+        console.error(`erreur lors de l'insertion des données createTeamPlayer2 : ` + err);
+        res.status(500).json({ error: `erreur lors de l'insertion des données createTeamPlayer2` });
       } else {
         res.status(200).json({ message: 'utilisateur enregistré' });
       }

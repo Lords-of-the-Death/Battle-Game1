@@ -22,6 +22,7 @@ let HTML = "";
 
 
 
+
 arrow_epee_gauche.addEventListener("click" , () =>{
     HTML = '<img src="./asset/epee.png" width="60px" height="60px"/>';
     HTML += '<div class="cardTeamText">TEAM 1</div>'
@@ -78,7 +79,7 @@ const url = 'http://localhost:8080/getplayerperso';
 
 document.addEventListener("DOMContentLoaded", () => {
   fetchData()
-    .then((data) => { console.log(data) ; })
+    .then((data) => { console.log('getplayerperso '); })
     .catch((error) => { console.log("Erreur de récupération des données : " + error.message); });
 });
 
@@ -89,7 +90,6 @@ async function fetchData() {
       let users = data;
 
       users.forEach(user => {
-          console.log('User ', user.IdPlayer);
           let ligneTb = createRow(user);
           tableBody.appendChild(ligneTb);
 
@@ -160,10 +160,10 @@ function addPlayer(user, direction){
   
   if(direction ==="left"){
     if (team1Left.length <=4){
-      console.log('team1Left ',team1Left);
       team1Left.push([user.Idplayer,user.personame]);
       document.getElementById("left"+user.Idplayer).style.display ="none";
       document.getElementById("right"+user.Idplayer).style.display ="none";
+      console.log('T1 ',team1Left);
       fillTeam();
     }else{
       message('La liste est pleine')
@@ -172,7 +172,7 @@ function addPlayer(user, direction){
   }else {
     if (team2Right.length <=4){
         team2Right.push([user.Idplayer,user.personame])
-        console.log(team2Right);
+        console.log('T2 ',team2Right);
         fillTeam();
         document.getElementById("left"+user.Idplayer).style.display ="none";
         document.getElementById("right"+user.Idplayer).style.display ="none";
@@ -206,8 +206,6 @@ function fillTeam(){
   let addHTML;
 
   for(i=0;i<=team1Left.length-1;++i ){
-
-    console.log('team left ',team1Left[i][1])
     
     addHTML = '<img src="../imgperso/'+team1Left[i][1] +'-idle-left.gif" class="modal-image"></img>'
     document.querySelector('.playerT1-'+team1Left.length).innerHTML = addHTML;
@@ -284,105 +282,165 @@ document.getElementById('btn_start').addEventListener("click", () =>{
 
   if(valide){
     
-    const team1Data = {
-      Buff1: buff1
-    };
+
+    //createTeam1();
+    //createTeam2();
+      
+
+    fillTeam1();
+    fillTeam2();
     
-    fetch('http://localhost:8080/team1', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(team1Data)
-    })
-    
-    .then(response => response.json())
-    .then(data => {console.log('Données envoyées avec succès', data);})
-    
-    .catch(error => {console.error('Erreur lors de l\'envoi des données', error);});
-    
-    
-    const team2Data = {
-      Buff2: buff2
-    };
-    
-    fetch('http://localhost:8080/team2', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(team2Data)
-    })
-    
-    .then(response => response.json())
-    .then(data => {console.log('Données envoyées avec succès', data);})
-    
-    .catch(error => {console.error('Erreur lors de l\'envoi des données', error);});
-
-
-
-
-/***********************Récupération des indexs*****************************/
-    let indexTeam1 = 0;
-    let indexTeam2 = 0;
-    
-    fetch(`http://localhost:8080/getteam1`,{
-      method: "GET",
-      headers: {
-          "Content-type": "application/json"
-      }
-      })
-      .then(response => response.json())
-      .then(data1 => aa(data1))
-
-      function aa(){
-        indexTeam1 = data1[0].MaxIdT1;
-      }
-    
-
-
-
-    fetch(`http://localhost:8080/getteam2`,{
-    method: "GET",
-    headers: {
-        "Content-type": "application/json"
-    }
-    })
-    .then(response => response.json())
-    .then(data2 => console.log('Index T2 ',data2[0].MaxIdT2))
-    
-
-
-
-
-/************************ Peuplemnt des équipes *****************************************/
-    console.log('indexTeam1 ',indexTeam1)
-
-    const team1playerData = {
-      IdTeam1: indexTeam1,
-      Idplayer: team1Left[0][0]
-    };
-    
-    fetch('http://localhost:8080/creatteam1', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(team1playerData)
-    })
-    
-    .then(response => response.json())
-    .then(data => {console.log('Données envoyées avec succès', data);})
-    
-    .catch(error => {console.error('Erreur lors de l\'envoi des données', error);});
-
-
-
+   
   }
 });
 
 
 
+/********************************** Creation des Equipes ***********/
+
+async function createTeam1(){
+  const team1Data = {
+    Buff1: buff1
+  };
+  
+  await fetch('http://localhost:8080/team1', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(team1Data)
+  })
+  
+  .then(response => response.json())
+  .then(data => {console.log('Données envoyées avec succès', data);})
+  
+  .catch(error => {console.error('Erreur lors de l\'envoi des données', error);});
+}
+
+
+async function createTeam2(){
+  const team2Data = {
+    Buff2: buff2
+  };
+  
+  await fetch('http://localhost:8080/team2', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(team2Data)
+  })
+  
+  .then(response => response.json())
+  .then(data => {console.log('Données envoyées avec succès', data);})
+  
+  .catch(error => {console.error('Erreur lors de l\'envoi des données', error);});
+}
+
+
+/***********************Récupération des indexes*****************************/
+
+async function getIndexTeam1(){
+
+  var headers = new Headers();
+
+  var requestOptions = {
+    method: "GET",
+    headers: headers,
+    redirect: "follow"
+  };
+
+  try {
+    const response = await fetch(`http://localhost:8080/getteam1`, requestOptions);
+    if (!response.ok) {
+      throw new Error("Erreur HTTP, statut = " + response.status);
+    }
+    const body = await response.json();
+    console.log('Données getIndexTeam1', body);
+    return body;
+  } catch (error) {
+    throw new Error("Erreur lors de la récupération des données : " + error.message);
+  }
+
+}
+
+
+
+
+
+async function getIndexTeam2(){
+  var headers = new Headers();
+
+  var requestOptions = {
+    method: "GET",
+    headers: headers,
+    redirect: "follow"
+  };
+
+  try {
+    const response = await fetch(`http://localhost:8080/getteam2`, requestOptions);
+    if (!response.ok) {
+      throw new Error("Erreur HTTP, statut = " + response.status);
+    }
+    const body = await response.json();
+    console.log('Données getIndexTeam2', body);
+    return body;
+  } catch (error) {
+    throw new Error("Erreur lors de la récupération des données : " + error.message);
+  }
+}
+  
+  
+  /************************ Peuplement des équipes *****************************************/
+  let i =0;
+  let team1LeftTab;
+  let team2RightTab;
+
+  for(i=0 ; i<team1Left.length ;++i){
+    team1LeftTab = team1Left[i][0];
+    fillTeam1(team1LeftTab)
+  }
+  
+  let j=0;
+  for(j=0 ; j<team2Right.length ;++j){
+    team2Right = team2Right[j][0]
+    fillTeam2(team2RightTab)
+  }
+  
+  let indexTeam1 = 0;
+  let indexTeam2 = 0; 
+
+
+ 
+async function fillTeam1(team1LeftTab){
+  
+
+  await getIndexTeam1()
+    .then((body) => {indexTeam1 = body[0].MaxIdT1;})
+    .catch((error) => { console.log("Erreur de récupération des données : " + error.message); });
+
+
+        const data = {
+          "IdTeam1": indexTeam1,
+          "Idplayer": team1LeftTab
+        };
+        
+        await fetch('http://localhost:8080/creatteam1', {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        })
+        
+        .then(response => response.json())
+        .then(data => {console.log('Données envoyées avec succès fillTeam1', data);})
+        
+        .catch(error => {console.error('Erreur lors de l\'envoi des données fillTeam1', error);});
+        console.log('fillTeam1 ',indexTeam1);
+ 
+}
+  
 
 
 
@@ -390,13 +448,40 @@ document.getElementById('btn_start').addEventListener("click", () =>{
 
 
 
+async function fillTeam2(team2RightTab){
 
+  await getIndexTeam2()
+    .then((body) => {indexTeam2 = body[0].MaxIdT2;})
+    .catch((error) => { console.log("Erreur de récupération des données : " + error.message); });
 
-
-
-
-
-
-
-
-
+        const data = {
+          "IdTeam2": indexTeam2,
+          "Idplayer": team2RightTab
+        };
+        
+        await fetch('http://localhost:8080/creatteam2', {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        })
+        
+        .then(response => response.json())
+        .then(data => {console.log('Données envoyées avec succès fillTeam2', data);})
+        
+        .catch(error => {console.error('Erreur lors de l\'envoi des données fillTeam2', error);});
+        console.log('fillTeam1 ',indexTeam2);
+ 
+}
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
