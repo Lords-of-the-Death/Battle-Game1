@@ -29,7 +29,7 @@ function handleData(data) {
 
         let divElement = document.createElement("div");
         divElement.id = "T1hero"+`${i}`;
-        divElement.style.position = "relative";
+        divElement.style.position = "absolute";
         container.appendChild(divElement);
 
         let container1 = document.getElementById("T1hero"+`${i}`);
@@ -55,6 +55,7 @@ function handleData(data) {
 
         let divElement = document.createElement("div");
         divElement.id = "T2hero"+`${i}`;
+        divElement.style.position = "absolute";
         container.appendChild(divElement);
 
         let container1 = document.getElementById("T2hero"+`${i}`);
@@ -78,7 +79,8 @@ const go = document.getElementById('go');
 
 go.addEventListener('click', function () {
 
-    console.log('lancement du combat !');   
+    console.log('lancement du combat !');  
+    moveCharacter(team1, team2); 
 
     function sumLife(equipe) {
 
@@ -87,21 +89,50 @@ go.addEventListener('click', function () {
             somme += el.LevelPlayer;
         });
         return somme
-    }
-    function indice(equipe) {
 
-        const ind = Math.floor(Math.random() * equipe.length);
-        return equipe[ind];
-    }
-    function fight(attaquant, defenseur) {
-
-        defenseur.LevelPlayer = defenseur.LevelPlayer - 0.5;
-        console.log(defenseur.LevelPlayer)
-    }
-    if (sumLife(team2)> 0) {
-        fight(indice(team1),indice(team2))
-    } else {
-        console.log('fini');
     }
     
+    function fight(attaquant, defenseur) {
+
+    }
+
+
+    // if (sumLife(team2) > 0 || sumLife(team1) > 0) {
+    
+    //     fight(indice(team1),indice(team2));
+    //     fight(indice(team2),indice(team1));
+    // } else {
+    //     console.log('fini');
+    // }
+    
 })
+
+function indice(equipe) {
+
+        const ind = Math.floor(Math.random() * equipe.length);
+        console.log(ind);
+        // return equipe[ind];
+        return ind;
+
+}
+
+function moveCharacter(team1, team2) {
+
+        let iT1 = indice(team1);
+        let iT2 = indice(team2);
+        
+        let characterTeam1 = document.getElementById('T1hero'+`${iT1}`);
+        characterTeam1.classList.add('move-mid_team1');
+
+        let characterTeam2 = document.getElementById('T2hero'+`${iT2}`);
+        characterTeam2.classList.add('move-mid_team2');
+
+        setTimeout(() => {
+
+            characterTeam1.classList.remove('move-mid_team1');
+            characterTeam2.classList.remove('move-mid_team2');
+
+        }, 2000);
+
+}
+
