@@ -300,6 +300,11 @@ async function prog(){
   
   await populateTeam()
   await majPlayer();
+  await createBattle();
+
+  await getIdBattle();
+
+  window.location.href="http://127.0.0.1:5501/battle%20fight/battle.html"
 
 }
 
@@ -485,11 +490,6 @@ async function fillTeam2(team2RightTab){
 
   /*************************** mise a jour player avant la bataille **************************/
   
-  
-  //let team1Left = [user.Idplayer,user.personame,user.Attplayer,user.DefPlayer,user.LevelPlayer];
-  //let team2Right = [user.Idplayer,user.personame,user.Attplayer,user.DefPlayer,user.LevelPlayer];
-
-  ///shttp://localhost:8080/setplayervalue/:id
 
   async function majPlayer(){
     let att;
@@ -510,19 +510,15 @@ async function fillTeam2(team2RightTab){
 
       switch(buff1){
         case 1:
-          att = att + 555;
+          att = att + 5;
           break;
         case 2:
-          def = def + 555;
+          def = def + 5;
           break;
         case 3:
-          lvl = lvl + 555;
+          lvl = lvl + 5;
           break;
       }
-
-
-
-
 
       await updatePlayer(att,def,lvl,id)
     }
@@ -539,13 +535,13 @@ async function fillTeam2(team2RightTab){
 
       switch(buff2){
         case 1:
-          att = att + 555;
+          att = att + 5;
           break;
         case 2:
-          def = def + 555;
+          def = def + 5;
           break;
         case 3:
-          lvl = lvl + 555;
+          lvl = lvl + 5;
           break;
       }
 
@@ -586,6 +582,56 @@ async function fillTeam2(team2RightTab){
 
   }
   
+    
+  async function getIdBattle(){
+    var headers = new Headers();
+    
+    console.log('Index Team 1 ',indexTeam1);
+    console.log('Index Team 2 ',indexTeam2);
+
+    var requestOptions = {
+      method: "GET",
+      headers: headers,
+      redirect: "follow"
+    };
   
-  
-  
+    try {
+      const response = await fetch(`http://localhost:8080/getidbattle`, requestOptions);
+      if (!response.ok) {
+        throw new Error("Erreur HTTP, statut = " + response.status);
+      }
+      const body = await response.json();
+      console.log('Données Id Battle Max', body[0].maxBattle);
+      return body;
+    } catch (error) {
+      throw new Error("Erreur lors de la récupération des données : " + error.message);
+    }
+  }
+
+
+  async function createBattle(){
+        let Index1 = indexTeam1;
+        let Index2 = indexTeam2;
+        
+    const team1Data = {
+      "IdTeam1":Index1,
+      "IdTeam2":Index2
+    };
+    
+    await fetch('http://localhost:8080/setbattle', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(team1Data)
+    })
+    
+    .then(response => response.json())
+    .then(data => {console.log('Données envoyées createBattle ', data);})
+    
+    .catch(error => {console.error('Erreur lors de l\'envoi des données createBattle ', error);});
+
+  }
+
+
+

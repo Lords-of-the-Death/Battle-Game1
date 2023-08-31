@@ -223,8 +223,56 @@ const getAllPlayer = (req, res) => {
     })
   }
 
+  const getIdBattle =(req, res) => {
+    const query = 'SELECT MAX(`IdBattle`) As maxBattle FROM `battles`';
+    conn.query(query, (err, result) => {
+      if (err) {
+        console.error('Erreur de la récupération des données getIdBattle ' + err);
+        res.status(500).json({ error: 'Erreur lors de la récupération des données dans getIdBattle ' });
+      } else {
+        res.status(200).json(result);
+      }
+    })
+  }
 
+  const setBattle = (req, res) => {
+    const { IdTeam1, IdTeam2 } = req.body;
+    const query = 'INSERT INTO `battles`(`IdTeam1`, `IdTeam2`) VALUES (?,?)';
+    conn.query(query, [ IdTeam1, IdTeam2  ], (err) => {
+      if (err) {
+        console.error(`erreur lors de l'insertion des données setBattle : ` + err);
+        res.status(500).json({ error: `erreur lors de l'insertion des données setBattle`});
+      } else {
+        res.status(200).json({ message: 'utilisateur enregistré' });
+      }
+    });
+  }
 
+  const getBattleTeam1 = (req, res) => {
+    const query = "SELECT `battles`.`IdBattle`, `team1`.`Buff1`,`player`.*, `perso`.`imgIdlePerso` FROM `battles`  LEFT JOIN `team1` ON `battles`.`IdTeam1` = `team1`.`IdTeam1`  LEFT JOIN `appartenirteam1` ON `appartenirteam1`.`IdTeam1` = `team1`.`IdTeam1` LEFT JOIN `player` ON `appartenirteam1`.`Idplayer` = `player`.`Idplayer` LEFT JOIN `perso` ON `player`.`IdPerso` = `perso`.`IdPerso` WHERE `battles`.`IdBattle`= ?;";
+
+       conn.query(query, [req.params.id], (err, result) => {
+      if (err) {
+        console.error('Erreur de la récupération des données ' + err);
+        res.status(500).json({ error: 'Erreur lors de la récupération des données' });
+      } else {
+        res.status(200).json(result);
+      }
+    })
+  }
+
+  const getBattleTeam2 = (req, res) => {
+    const query = "SELECT `battles`.`IdBattle`, `team2`.`Buff2`,`player`.*, `perso`.`imgIdlePerso` FROM `battles`  LEFT JOIN `team2` ON `battles`.`IdTeam2` = `team2`.`IdTeam2`  LEFT JOIN `appartenirteam2` ON `appartenirteam2`.`IdTeam2` = `team2`.`IdTeam2` LEFT JOIN `player` ON `appartenirteam2`.`Idplayer` = `player`.`Idplayer` LEFT JOIN `perso` ON `player`.`IdPerso` = `perso`.`IdPerso` WHERE `battles`.`IdBattle`= ?;";
+
+       conn.query(query, [req.params.id], (err, result) => {
+      if (err) {
+        console.error('Erreur de la récupération des données ' + err);
+        res.status(500).json({ error: 'Erreur lors de la récupération des données' });
+      } else {
+        res.status(200).json(result);
+      }
+    })
+  }
 
 module.exports = {
   createPlayer,
@@ -239,5 +287,9 @@ module.exports = {
   getShowTeam2,
   createTeamPlayer1,
   createTeamPlayer2,
-  setPlayerValue
+  setPlayerValue,
+  getIdBattle,
+  setBattle,
+  getBattleTeam1,
+  getBattleTeam2
 };

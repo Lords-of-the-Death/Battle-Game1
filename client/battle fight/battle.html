@@ -7,22 +7,24 @@
     <link rel="stylesheet" href="battle.css">
 </head>
 <body>
+    <main id="main">
 
-    <div class="top">
-        <div class="buff"><img src="../../image/buff/attack.png" alt="buffATK"></div>
-        <div class="toptop">
-            <h1>BATTLEFIGHT</h1>
-            <button id="go" class="start">GO</button>
-            <div id="infoGame"></div>
+        <div class="top">
+            <div class="buff" id="buff1" ></div>
+            <div class="toptop">
+                <h1>BATTLEFIGHT</h1>
+                <button id="go" class="start">GO</button>
+                <div id="infoGame"></div>
+            </div>
+            <div class="buff" id="buff2"></div>
         </div>
-        <div class="buff"><img src="../../image/buff/shield.png" alt="buffDEF"></div>
-    </div>
 
-    <div class="contain">
-        <div id="team1"></div>
-        <div id="team2"></div>
-    </div>
-    
+        <div class="contain">
+            <div id="team1"></div>
+            <div id="team2"></div>
+        </div>
+
+    </main>
     <script src="battle.js"></script>
 </body>
 </html>
