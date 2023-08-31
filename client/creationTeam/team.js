@@ -285,11 +285,8 @@ document.getElementById('btn_start').addEventListener("click", () =>{
 
     //createTeam1();
     //createTeam2();
-      
-
-    fillTeam1();
-    fillTeam2();
     
+    populateTeam()
    
   }
 });
@@ -392,20 +389,24 @@ async function getIndexTeam2(){
   
   
   /************************ Peuplement des équipes *****************************************/
-  let i =0;
+  
   let team1LeftTab;
   let team2RightTab;
 
-  for(i=0 ; i<team1Left.length ;++i){
-    team1LeftTab = team1Left[i][0];
-    fillTeam1(team1LeftTab)
-  }
-  
-  let j=0;
-  for(j=0 ; j<team2Right.length ;++j){
-    team2Right = team2Right[j][0]
-    fillTeam2(team2RightTab)
-  }
+  async function populateTeam(){  let i =0;
+    for(i=0 ; i<team1Left.length ;++i){
+      
+      team1LeftTab = team1Left[i][0];
+      console.log('team1LeftTab ',team1LeftTab )
+      await fillTeam1(team1LeftTab)
+    }
+    
+    let j=0;
+    for(j=0 ; j<team2Right.length ;++j){
+      team2RightTab = team2Right[j][0]
+      console.log('team1LeftTab ',team2RightTab )
+      await fillTeam2(team2RightTab)
+  }}
   
   let indexTeam1 = 0;
   let indexTeam2 = 0; 
@@ -413,8 +414,6 @@ async function getIndexTeam2(){
 
  
 async function fillTeam1(team1LeftTab){
-  
-
   await getIndexTeam1()
     .then((body) => {indexTeam1 = body[0].MaxIdT1;})
     .catch((error) => { console.log("Erreur de récupération des données : " + error.message); });
@@ -444,12 +443,7 @@ async function fillTeam1(team1LeftTab){
 
 
 
-
-
-
-
 async function fillTeam2(team2RightTab){
-
   await getIndexTeam2()
     .then((body) => {indexTeam2 = body[0].MaxIdT2;})
     .catch((error) => { console.log("Erreur de récupération des données : " + error.message); });
@@ -471,10 +465,12 @@ async function fillTeam2(team2RightTab){
         .then(data => {console.log('Données envoyées avec succès fillTeam2', data);})
         
         .catch(error => {console.error('Erreur lors de l\'envoi des données fillTeam2', error);});
-        console.log('fillTeam1 ',indexTeam2);
+        console.log('fillTeam2 ',indexTeam2);
  
 }
   
+
+
   
   
   
