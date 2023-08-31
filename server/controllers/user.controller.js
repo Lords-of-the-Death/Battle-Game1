@@ -206,6 +206,26 @@ const getAllPlayer = (req, res) => {
     })};
   };
 
+  const setPlayerValue = (req, res) => {
+    const id = req.params.id;
+    const {Attplayer, DefPlayer, LevelPlayer} = req.body;
+
+
+    const query = "UPDATE `player` SET `Attplayer`= ?,`DefPlayer`= ? ,`LevelPlayer`= ? WHERE `Idplayer`= ?";
+
+    conn.query(query, [Attplayer,DefPlayer,LevelPlayer,id], (err, result) => {
+      if (err) {
+        console.error('Erreur de la récupération des données ' + err);
+        res.status(500).json({ error: 'Erreur lors de la récupération des données' });
+      } else {
+        res.status(200).json(result);
+      }
+    })
+  }
+
+
+
+
 module.exports = {
   createPlayer,
   getAllPlayer,
@@ -218,5 +238,6 @@ module.exports = {
   getShowTeam1,
   getShowTeam2,
   createTeamPlayer1,
-  createTeamPlayer2
+  createTeamPlayer2,
+  setPlayerValue
 };

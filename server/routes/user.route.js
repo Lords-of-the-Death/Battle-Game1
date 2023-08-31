@@ -13,4 +13,5 @@ router.get('/getteam1', userController.getShowTeam1);
 router.get('/getteam2', userController.getShowTeam2);
 router.put('/creatteam1', userController.createTeamPlayer1);
 router.put('/creatteam2', userController.createTeamPlayer2)
+router.put('/setplayervalue/:id', userController.setPlayerValue)
 module.exports = router;
