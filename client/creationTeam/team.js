@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 async function fetchData() {
-  fetch(url)
+  await fetch(url)
   .then((resp) => resp.json())
   .then((data) => {
       let users = data;
@@ -128,7 +128,7 @@ function createRow(user) {
   
   let addHTML = '<td><div id="left'+ user.Idplayer +'"><img src="./asset/gauche.png" width="20px" height="20px" alt="fleche" class="player-fleche-left"/></div></td>';
   addHTML += '<td>' + user.NamePlayer + '</td>';
-  addHTML += '<td>' + user.AttPlayer + '</td>';
+  addHTML += '<td>' + user.Attplayer + '</td>';
   addHTML += '<td>' + user.DefPlayer + '</td>';
   addHTML += '<td>' + user.LevelPlayer + '</td>';
   addHTML += '<td>' + user.personame + '</td>';
@@ -160,7 +160,13 @@ function addPlayer(user, direction){
   
   if(direction ==="left"){
     if (team1Left.length <=4){
-      team1Left.push([user.Idplayer,user.personame]);
+        console.log('remplir left ', user.Attplayer)
+
+      team1Left.push([user.Idplayer,user.personame,user.Attplayer,user.DefPlayer,user.LevelPlayer]);
+
+      console.log('Valeur  team1Left ',team1Left[0][0] ," 1: ", team1Left[0][1]," 2:",team1Left[0][2]," 3:",team1Left[0][3]," 4:",team1Left[0][3]);
+
+
       document.getElementById("left"+user.Idplayer).style.display ="none";
       document.getElementById("right"+user.Idplayer).style.display ="none";
       console.log('T1 ',team1Left);
@@ -171,7 +177,7 @@ function addPlayer(user, direction){
     
   }else {
     if (team2Right.length <=4){
-        team2Right.push([user.Idplayer,user.personame])
+        team2Right.push([user.Idplayer,user.personame,user.Attplayer,user.DefPlayer,user.LevelPlayer])
         console.log('T2 ',team2Right);
         fillTeam();
         document.getElementById("left"+user.Idplayer).style.display ="none";
@@ -282,14 +288,20 @@ document.getElementById('btn_start').addEventListener("click", () =>{
 
   if(valide){
     
-
-    //createTeam1();
-    //createTeam2();
-    
-    populateTeam()
+    prog();
    
   }
 });
+
+
+async function prog(){
+  await createTeam1();
+  await createTeam2();
+  
+  await populateTeam()
+  await majPlayer();
+
+}
 
 
 
@@ -471,12 +483,108 @@ async function fillTeam2(team2RightTab){
   
 
 
+  /*************************** mise a jour player avant la bataille **************************/
   
   
+  //let team1Left = [user.Idplayer,user.personame,user.Attplayer,user.DefPlayer,user.LevelPlayer];
+  //let team2Right = [user.Idplayer,user.personame,user.Attplayer,user.DefPlayer,user.LevelPlayer];
+
+  ///shttp://localhost:8080/setplayervalue/:id
+
+  async function majPlayer(){
+    let att;
+    let def;
+    let lvl;
+    let id;
   
+    let i=0;
+    let j=0;
+
+    for(i=0 ; i<team1Left.length ;++i){
+      console.log('Boucle left  ',team1Left[i][0] ," ", team1Left[i][2]," ",team1Left[i][3]);
+
+      id = team1Left[i][0];
+      att = team1Left[i][2];
+      def = team1Left[i][3];
+      lvl = team1Left[i][4];
+
+      switch(buff1){
+        case 1:
+          att = att + 555;
+          break;
+        case 2:
+          def = def + 555;
+          break;
+        case 3:
+          lvl = lvl + 555;
+          break;
+      }
+
+
+
+
+
+      await updatePlayer(att,def,lvl,id)
+    }
+
+
+
+    for(j=0 ; j<team2Right.length ;++j){
+      console.log('Boucle right  ',team1Left[j][0] ," ", team1Left[j][2]," ",team1Left[j][3]);
+
+      id = team2Right[j][0];
+      att = team2Right[j][2];
+      def = team2Right[j][3];
+      lvl = team2Right[j][4];
+
+      switch(buff2){
+        case 1:
+          att = att + 555;
+          break;
+        case 2:
+          def = def + 555;
+          break;
+        case 3:
+          lvl = lvl + 555;
+          break;
+      }
+
+
+      await updatePlayer(att,def,lvl,id)
+
+    }
+  }
+
+
+
+  async function updatePlayer(att,def,lvl,id){
+    let myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    const data = {
+      "Attplayer": att,
+      "DefPlayer": def,
+      "LevelPlayer": lvl
+    };
+
+    await fetch(`http://localhost:8080/setplayervalue/${id}`,{
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+
+    
+    })
   
-  
-  
+    .then(response => response.json())
+    .then(data => {console.log('Données envoyées avec succès updatePlayer', data);})
+
+    .catch(error => {console.error('Erreur lors de l\'envoi des données updatePlayer', error);});
+    console.log('updatePlayer ',att ," ", def," ",lvl," ",id);
+
+
+  }
   
   
   
