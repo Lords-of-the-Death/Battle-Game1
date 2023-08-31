@@ -1,79 +1,77 @@
-fetch("http://localhost:8080/battle",{
-    method: "GET",
-    headers: {
-        "Content-type": "application/json"
-    }
-})
-.then(response => response.json())
-.then(data => handleData(data))
-
-let team1  = [];
-let team2  = [];
-
-function handleData(data) {
-    
-    for (let i = 0; i < data.length; i++) {
-        const el = data[i];
-        if (el.Team == "Team1") {
-            team1.push(el);
-        } else {
-            team2.push(el);
-        }
-    }
-
-    for (let i = 0; i < team1.length; i++) {
-
-        const el = team1[i];
-
-        let container = document.getElementById("team1");
-
-        let divElement = document.createElement("div");
-        divElement.id = "T1hero"+`${i}`;
-        divElement.style.position = "absolute";
-        container.appendChild(divElement);
-
-        let container1 = document.getElementById("T1hero"+`${i}`);
-
-        let lifebar = document.createElement("div");
-        lifebar.id = "life";
-        container1.appendChild(lifebar);
-
-        let imgElement = document.createElement("img");            
-        imgElement.src = "../imgperso/"+  el.imgIdlePerso + "-left.gif";
-        imgElement.alt = el.NamePerso;
-        imgElement.id = "imgT1Hero"+`${i}`;
-        imgElement.style.width = "184px";
-        imgElement.style.height = "152px";
-        container1.appendChild(imgElement);
-    }
-
-    for (let i = 0; i < team2.length; i++) {
-
-        const el = team2[i];
-
-        let container = document.getElementById("team2");
-
-        let divElement = document.createElement("div");
-        divElement.id = "T2hero"+`${i}`;
-        divElement.style.position = "absolute";
-        container.appendChild(divElement);
-
-        let container1 = document.getElementById("T2hero"+`${i}`);
-
-        let lifebar = document.createElement("div");
-        lifebar.id = "life";
-        container1.appendChild(lifebar);
-
-        let imgElement = document.createElement("img");            
-        imgElement.src = "../imgperso/"+  el.imgIdlePerso + "-left.gif";
-        imgElement.alt = el.NamePerso;
-        imgElement.id = "imgT2Hero"+`${i}`;
-        imgElement.style.position = "relative";
-        imgElement.style.width = "184px";
-        imgElement.style.height = "152px";
-        container1.appendChild(imgElement);
-    }
+const hero1 = {
+    atk : Math.floor(Math.random() * 10) + 1,
+    def : Math.floor(Math.random() * 10) + 1,
+    life : document.getElementById('hero1lb').offsetWidth,
+    gif : document.getElementById('hero1img'),
+    position : document.getElementById('hero1')
 }
+console.log(hero1);
+const hero2 = {
+    atk : Math.floor(Math.random() * 10) + 1,
+    def : Math.floor(Math.random() * 10) + 1,
+    life : document.getElementById('hero2lb'),
+    gif : document.getElementById('hero2img'),
+    position : document.getElementById('hero2')
+}
+const hero3 = {
+    atk : Math.floor(Math.random() * 10) + 1,
+    def : Math.floor(Math.random() * 10) + 1,
+    life : document.getElementById('hero3lb'),
+    gif : document.getElementById('hero3img'),
+    position : document.getElementById('hero3')
+}
+const hero4 = {
+    atk : Math.floor(Math.random() * 10) + 1,
+    def : Math.floor(Math.random() * 10) + 1,
+    life : document.getElementById('hero4lb'),
+    gif : document.getElementById('hero4img'),
+    position : document.getElementById('hero4')
+}
+const hero5 = {
+    atk : Math.floor(Math.random() * 10) + 1,
+    def : Math.floor(Math.random() * 10) + 1,
+    life : document.getElementById('hero5lb'),
+    gif : document.getElementById('hero5img'),
+    position : document.getElementById('hero5')
+}
+const hero6 = {
+    atk : Math.floor(Math.random() * 10) + 1,
+    def : Math.floor(Math.random() * 10) + 1,
+    life : document.getElementById('hero6lb'),
+    gif : document.getElementById('hero6img'),
+    position : document.getElementById('hero6')
+}
+const hero7 = {
+    atk : Math.floor(Math.random() * 10) + 1,
+    def : Math.floor(Math.random() * 10) + 1,
+    life : document.getElementById('hero7lb'),
+    gif : document.getElementById('hero7img'),
+    position : document.getElementById('hero7')
+}
+const hero8 = {
+    atk : Math.floor(Math.random() * 10) + 1,
+    def : Math.floor(Math.random() * 10) + 1,
+    life : document.getElementById('hero8lb'),
+    gif : document.getElementById('hero8img'),
+    position : document.getElementById('hero8')
+}
+const hero9 = {
+    atk : Math.floor(Math.random() * 10) + 1,
+    def : Math.floor(Math.random() * 10) + 1,
+    life : document.getElementById('hero9lb'),
+    gif : document.getElementById('hero9img'),
+    position : document.getElementById('hero9')
+}
+const hero10 = {
+    atk : Math.floor(Math.random() * 10) + 1,
+    def : Math.floor(Math.random() * 10) + 1,
+    life : document.getElementById('hero10lb'),
+    gif : document.getElementById('hero10img'),
+    position : document.getElementById('hero10')
+}
+
+const team1 = [hero1, hero3, hero5, hero7, hero9];
+const team2 = [hero2, hero4, hero6, hero8, hero10];
 
 const go = document.getElementById('go');
 
@@ -135,4 +133,6 @@ function moveCharacter(team1, team2) {
         }, 2000);
 
 }
+
+
 
