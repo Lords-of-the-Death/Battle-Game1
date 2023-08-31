@@ -7,6 +7,6 @@ router.get('/top',userController.getTOP5)
 router.get('/hero/:id', userController.getPerso);
 router.get('/getplayerperso',userController.getPlayerPerso)
 router.get('/battle',userController.getBattle)
-
+router.put('/newdata/:id', userController.updateDataBattle);
 
 module.exports = router;

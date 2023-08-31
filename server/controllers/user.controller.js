@@ -113,10 +113,21 @@ const getAllPlayer = (req, res) => {
       }
     })
   }
-
-
-
-
+  const updateDataBattle = (req, res) => {
+    const { LevelPlayer } = req.body;
+    const query = 'UPDATE player SET LevelPlayer = ? WHERE Idplayer = ?';
+    conn.query(query, [LevelPlayer, req.params.id], (err) => {
+      if (err) {
+        console.error('Erreur lors de la modification de l\'utilisateur: ' + err);
+        res.status(500).json({
+          error: 'Erreur lors de la modification de l\'utilisateur'
+        });
+      } else {
+        console.log(res);
+        res.status(200).json({ message: 'Utilisateur modifié' });
+      }
+    });
+  }
 
 module.exports = {
   createPlayer,
@@ -124,5 +135,6 @@ module.exports = {
   getTOP5,
   getPerso,
   getPlayerPerso,
-  getBattle
+  getBattle,
+  updateDataBattle
 };

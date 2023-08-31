@@ -11,13 +11,14 @@ let team1  = [];
 let team2  = [];
 
 function handleData(data) {
-    
     for (let i = 0; i < data.length; i++) {
         const el = data[i];
         if (el.Team == "Team1") {
             team1.push(el);
+            
         } else {
             team2.push(el);
+            
         }
     }
 
@@ -35,7 +36,7 @@ function handleData(data) {
         let container1 = document.getElementById("T1hero"+`${i}`);
 
         let lifebar = document.createElement("div");
-        lifebar.id = "life";
+        lifebar.id = "T1life"+`${i}`;
         container1.appendChild(lifebar);
 
         let imgElement = document.createElement("img");            
@@ -61,14 +62,13 @@ function handleData(data) {
         let container1 = document.getElementById("T2hero"+`${i}`);
 
         let lifebar = document.createElement("div");
-        lifebar.id = "life";
+        lifebar.id = "T2life"+`${i}`;
         container1.appendChild(lifebar);
 
         let imgElement = document.createElement("img");            
-        imgElement.src = "../imgperso/"+  el.imgIdlePerso + "-left.gif";
+        imgElement.src = "../imgperso/"+  el.imgIdlePerso + "-right.gif";
         imgElement.alt = el.NamePerso;
         imgElement.id = "imgT2Hero"+`${i}`;
-        imgElement.style.position = "relative";
         imgElement.style.width = "184px";
         imgElement.style.height = "152px";
         container1.appendChild(imgElement);
@@ -79,60 +79,94 @@ const go = document.getElementById('go');
 
 go.addEventListener('click', function () {
 
-    console.log('lancement du combat !');  
-    moveCharacter(team1, team2); 
+    let iT1 = indice(team1);
+    let iT2 = indice(team2);
 
-    function sumLife(equipe) {
+    function moveCharacter(team1, team2) {
+            
 
-        var somme = 0;
-        equipe.forEach(el => {
-            somme += el.LevelPlayer;
-        });
-        return somme
+            let character = document.getElementById('T1hero'+`${iT1}`);
+            let gif = document.getElementById('imgT1Hero'+`${iT1}`);
+            let lifebar = document.getElementById('T1life'+`${iT1}`);
 
+            let character2 = document.getElementById('T2hero'+`${iT2}`);
+            let gif2 = document.getElementById('imgT2Hero'+`${iT2}`);
+            let lifebar2 = document.getElementById('T2life'+`${iT2}`);
+
+            character.classList.add('move-mid_team1');
+            let URLidle = gif.src;
+            let URLatt = gif.src.replace("idle", "attack");
+            let URLdef = gif.src.replace("idle", "defence");
+            let URLdie = gif.src.replace("idle", "die");
+            gif.src = URLatt;
+
+            character2.classList.add('move-mid_team2');
+            let URLidle2 = gif2.src;
+            let URLatt2 = gif2.src.replace("idle", "attack");
+            let URLdef2 = gif2.src.replace("idle", "defence");
+            let URLdie2 = gif2.src.replace("idle", "die");
+            gif2.src = URLdef2;
+            
+            setTimeout(() => {gif.src = URLdef;},1000)
+
+            setTimeout(() => {gif2.src = URLatt2;},1000)
+
+            setTimeout(() => {
+
+                character.classList.remove('move-mid_team1');
+                character2.classList.remove('move-mid_team2');
+
+                team1[iT1].LevelPlayer = team1[iT1].LevelPlayer - (team1[iT1].DefPlayer - team1[iT1].Attplayer);
+                gif.src = URLidle;
+
+                team2[iT2].LevelPlayer = team2[iT2].LevelPlayer - (team2[iT2].DefPlayer - team1[iT1].Attplayer);
+                gif2.src = URLidle2;
+
+                lifebar.style.width = (team1[iT1].LevelPlayer)*10 + 'px';
+                lifebar2.style.width = (team2[iT2].LevelPlayer)*10 + 'px';
+
+                if (team1[iT1].LevelPlayer < 0) {
+                    gif.src = URLdie;
+                    team1.splice(iT1, 1);
+                    lifebar.style.width = "0px";
+                    team1[iT1].Attplayer = 0;
+                }
+                if (team2[iT2].LevelPlayer < 0) {
+                    gif2.src = URLdie2;
+                    team2.splice(iT2, 1);
+                    lifebar2.style.width = "0px";
+                    team2[iT2].Attplayer = 0;
+                }
+
+            }, 2000);
     }
-    
-    function fight(attaquant, defenseur) {
 
-    }
-
-
-    // if (sumLife(team2) > 0 || sumLife(team1) > 0) {
-    
-    //     fight(indice(team1),indice(team2));
-    //     fight(indice(team2),indice(team1));
-    // } else {
-    //     console.log('fini');
-    // }
-    
+    console.log('lancement du combat !');
+    moveCharacter(team1,team2);
+    if (team1[iT1].LevelPlayer < 0) {
+        team1.splice(iT1);
+        console.log(team1);
+    };
 })
 
-function indice(equipe) {
+function sumLife(equipe) {
 
-        const ind = Math.floor(Math.random() * equipe.length);
-        console.log(ind);
-        // return equipe[ind];
-        return ind;
+    var somme = 0;
+    equipe.forEach(el => {
+        somme += el.LevelPlayer;
+    })    
+    return somme
 
 }
 
-function moveCharacter(team1, team2) {
-
-        let iT1 = indice(team1);
-        let iT2 = indice(team2);
-        
-        let characterTeam1 = document.getElementById('T1hero'+`${iT1}`);
-        characterTeam1.classList.add('move-mid_team1');
-
-        let characterTeam2 = document.getElementById('T2hero'+`${iT2}`);
-        characterTeam2.classList.add('move-mid_team2');
-
-        setTimeout(() => {
-
-            characterTeam1.classList.remove('move-mid_team1');
-            characterTeam2.classList.remove('move-mid_team2');
-
-        }, 2000);
-
+function indice(equipe) {
+    let ind
+    if (equipe.length == 1) {
+        ind = 0;
+    }else{
+        ind = Math.floor(Math.random() * equipe.length);
+    }
+    // return equipe[ind];
+    return ind;
 }
 
