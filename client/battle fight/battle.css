@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
+
+:root{
+    --marron:#A30000;
+    --noir:#000;
+    --bord:#D3A94C;
+    --vert:#00660A;
+    --rouge:#FF0000;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+    background: url(./asset/Fond-arena1.jpg) center/cover;
+    min-height: 100vh;
+    overflow: hidden;
+}
+h1{
+    font-family: Metal Mania;
+    color: var(--bord);
+    font-size: 50px;
+}
+.top{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 10px 0px 10px;
+}
+.buff{
+    width: 250px;
+    height: 250px;
+    background-color: #000;
+    border-radius: 100px;
+    border: 5px solid #D3A94C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.buff img{
+    width: 197px;
+    height: 188px;
+}
+.start{
+    width: 280px;
+    height: 75px;
+    background-color: #00660A;
+    color: #D3A94C;
+    border-radius: 50px;
+    border: 3px solid #D3A94C;
+    font-weight: bold;
+    font-size: 30px;
+}
+.restart{
+    width: 200px;
+    height: 100px;
+    background-color: #00660A;
+    color: #D3A94C;
+    border-radius: 50px;
+    border: 3px solid #D3A94C;
+    font-weight: bold;
+    font-family: Metal Mania;
+    color: var(--bord);
+    font-size: 30px;
+}
+.finish{
+    width: 200px;
+    height: 100px;
+    background-color: #A30000;
+    color: #D3A94C;
+    border-radius: 50px;
+    border: 3px solid #D3A94C;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: Metal Mania;
+    color: var(--bord);
+}
+#finFight{
+    display: none;
+}
+.toptop{
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    color: #D3A94C;
+}
+#infoGame{
+    width: 500px;
+    height: 500px;
+    background-color: rgba(0, 0, 0, 0.50);
+    border-radius: 30px;
+    margin: 10px;
+    border:5px solid #D3A94C;
+    display: none;
+    color: #FEFAFA;
+    text-align: center;
+    font-family: Inter;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    /* overflow-x: none; */
+    overflow-y: scroll;
+}
+
+.contain{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    height: 80vh;
+}
+
+#life{
+    background-color: #00660A;
+    border: 1px solid #000;
+    height: 15px;
+    width: 80%;
+    margin: 0 auto;
+    z-index: 1;
+}
+
+
+#team1, #team2 {
+    height: 50%;
+    width: 50%;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+}
+
+#team1 {
+    justify-content: flex-start;
+}
+
+#team2 {
+    justify-content: flex-end;
+}
+
+.move-mid_team1 {
+    left: 80%;
+}
+
+.move-mid_team2 {
+    right: 80%;
+}
+
+#T1hero0,#T1hero1,#T1hero2,#T1hero3,#T1hero4,#T2hero0,#T2hero1,#T2hero2,#T2hero3,#T2hero4{
+    transition: all 5s ease;
+}

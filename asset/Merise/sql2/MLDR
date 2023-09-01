@@ -1,0 +1,11 @@
+# Modèle créé le : Mon Aug 28 14:08:38 CEST 2023 
+perso (IdPerso, AttPerso, DefPerso, NamePerso, imgIdlePerso) 
+player (Idplayer, NamePlayer, Attplayer, DefPlayer, LevelPlayer, IdPerso) 
+team1 (IdTeam1, Buff1, IdLien1) 
+team2 (IdTeam2, Buff2, IdLien2) 
+battles (IdBattle, IdTeam1, IdTeam2) 
+Créer (Idplayer, IdPerso) 
+appartenirteam1 (Idplayer, IdTeam1, IdLien1, IdTeam1, Idplayer) 
+appartenirteam2 (Idplayer, IdTeam2, IdLien2, IdTeam2, Idplayer) 
+Appartenir1 (IdTeam1, IdBattle) 
+Appartenir2 (IdTeam2, IdBattle) 

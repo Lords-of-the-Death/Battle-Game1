@@ -18,19 +18,21 @@ body{
     background: url(./assetindex/Fond-start.jpg) center/cover;
     min-height: 100vh;
     overflow: hidden;
+    display: flex;
 }
 
 .banner{
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
 }
 
-.banner .img{
+/*.banner .img{
     width: 200px;
     
-}
+}*/
 
 .button{
     width: 250px;
@@ -59,4 +61,24 @@ body{
 
 a{
     text-decoration: none;
+}
+
+.entrer{
+    position: fixed;
+    bottom: 15%;
+    left: 50%;
+    font-family: Metal Mania;
+    height: 500px;
+    width: 250px;
+    border-radius:100px 100px 0 0;
+    text-align: center;
+    color: var(--bord);
+    font-size: 50px;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }

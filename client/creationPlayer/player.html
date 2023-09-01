@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>createPlayer</title>
+    <link rel="stylesheet" href="player.css">
+</head>
+<body>
+    <audio autoplay loop >
+        <source src="./asset/player.mp3" type="audio/mpeg" />
+    </audio>
+
+
+    <nav class="navBtn">
+        <div class="button">
+            <a href="../creationTeam/team.html">Team</a>
+        </div>
+        
+        <div class="button" style="right: 10px;">
+            <a href="../index.html">Return</a>
+        </div>
+    </nav>
+
+<h1>SELECT YOUR GLADIATORS</h1>
+
+
+    <div class="tableSelection">
+        <table>
+            <tbody>
+                <tr>
+                    <td><img src="../imgperso/axe-female-idle-left.gif" alt="Axe_M" id="1" class="modal-image"></td>
+                    <td><img src="../imgperso/axe-male-idle-left.gif" alt="Axe_F" id="2" class="modal-image"></td>
+                    <td><img src="../imgperso/blind-female-idle-left.gif" alt="Blind_M" id="3" class="modal-image"></td>
+                    <td><img src="../imgperso/blind-male-idle-left.gif" alt="Blind_F" id="4" class="modal-image"></td>
+                </tr>
+                <tr>
+                    <td><img src="../imgperso/cryo-female-idle-left.gif" alt="Cryo_M" id="5"  class="modal-image"></td>
+                    <td><img src="../imgperso/cryo-male-idle-left.gif" alt="Cryo_F" id="6" class="modal-image"></td>
+                    <td><img src="../imgperso/dark-female-idle-left.gif" alt="Dark_M" id="7" class="modal-image"></td>
+                    <td><img src="../imgperso/dark-male-idle-left.gif" alt="Dark_F" id="8" class="modal-image"></td>
+                </tr>
+                <tr>
+                    <td><img src="../imgperso/bandage-female-idle-left.gif" alt="Bandage_M" id="9" class="modal-image"></td>
+                    <td><img src="../imgperso/bandage-male-idle-left.gif" alt="Bandage_F" id="10" class="modal-image"></td>
+                    <td><img src="../imgperso/electro-female-idle-left.gif" alt="Electro_M" id="11" class="modal-image"></td>
+                    <td><img src="../imgperso/electro-male-idle-left.gif" alt="Electro_F" id="12" class="modal-image"></td>
+                </tr>
+                <tr>
+                    <td><img src="../imgperso/hammer-female-idle-left.gif" alt="Hammer_M" id="13" class="modal-image"></td>
+                    <td><img src="../imgperso/hammer-male-idle-left.gif" alt="Hammer_F" id="14" class="modal-image"></td>
+                    <td><img src="../imgperso/hydro-female-idle-left.gif" alt="Hydro_M" id="15" class="modal-image"></td>
+                    <td><img src="../imgperso/hydro-male-idle-left.gif" alt="Hydro_F" id="16" class="modal-image"></td>
+                </tr>
+                <tr>
+                    <td><img src="../imgperso/pyro-female-idle-left.gif" alt="Pyro_M" id="17" class="modal-image"></td>
+                    <td><img src="../imgperso/pyro-male-idle-left.gif" alt="Pyro_F" id="18" class="modal-image"></td>
+                    <td><img src="../imgperso/skull-female-idle-left.gif" alt="Skull_M" id="19" class="modal-image"></td>
+                    <td><img src="../imgperso/skull-male-idle-left.gif" alt="Skull_F" id="20" class="modal-image"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="cardHero" id="card">
+        <form action="player.html" method="get" id="user-form">
+            <!-- <span class="close">&times;</span> -->
+            <input type="text" name="username" id="inputName" placeholder="username">
+            <img id="modalImage">
+            <p class="statHero" id="namechar"></p>
+            <p class="statHero" id="attchar"></p>
+            <p class="statHero" id="defchar"></p>
+            <p class="statHero" >PV 1</p>
+            <button type="submit" class="btnSubmit">ENREGISTRER</button>
+        </form>
+    </div>
+    <script type="module" src="player.js"></script>
+</body>
+</html>
