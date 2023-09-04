@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
+
+:root{
+    --marron:#A30000;
+    --noir:#000;
+    --bord:#D3A94C;
+    --vert:#00660A;
+    --rouge:#FF0000;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+    background: url(./asset/fond-player.jpg) center/cover;
+    min-height: 100vh;
+    overflow: hidden;
+}
+h1{
+    position: absolute;
+    font-family: Metal Mania;
+    color: var(--bord);
+    font-size: 50px;
+    top: 9%;
+    left: 22%;
+}
+.navBtn{
+    margin: 10px 10px 0px 10px;
+}
+.button{
+    position: absolute;
+    top: 25px;
+    width: 250px;
+    height: 100px;
+    flex-shrink: 0;
+    border-radius: 50px;
+    background: var(--bord);
+    color: var(--noir);
+    text-align: center;
+    font-family: Metal Mania;
+    font-size: 50px;
+    font-weight: 400;
+    padding-top: 15px;
+}
+a{
+    text-decoration: none;
+    text-decoration-color: var(--bord);
+    color: var(--noir);
+}
+.tableSelection{
+    position: absolute;
+    width:inherit;
+    height: inherit;
+    top: 15%;
+    left: 10%;
+    padding: auto;
+    border: 5px solid var(--bord);
+    border-radius: 50px;
+    background-color: rgba(217, 217, 217, 0.75);
+}
+
+td img{
+    width: 145px;
+    height: 140px;
+}
+.cardHero{
+    position: absolute;
+    width: 550px;
+    height: 750px;
+    top: 15%;
+    right: 10%;
+    border: 5px solid var(--bord);
+    border-radius: 50px;
+    background-color: rgba(217, 217, 217, 0.75);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+    text-align: center;
+}
+.close {
+    position: absolute;
+    top: 40px;
+    right: 15px;
+    font-size: 70px;
+    font-weight: bold;
+    color: #D3A94C;
+    cursor: pointer;
+}
+.statHero{
+    background-color: rgba(0, 0, 0, 0.25);
+    width: 400px;
+    height: 50px;
+    border-radius: 50px;
+    margin: 5px;
+    font-size: 35px;
+    font-family: Metal Mania;
+    text-align: center;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+.btnSubmit{
+    width: 287px;
+    height: 92px;
+    border-radius: 50px;
+    margin-top: 15px;
+    font-size: 25px;
+    font-family: Metal Mania;
+    background-color: var(--vert);
+    border: 3px solid var(--bord);
+    color: var(--bord);
+}
+#inputName{
+    background-color: var(--bord);
+    border: 3px solid var(--bord);
+    font-family: Metal Mania;
+    width: 400px;
+    height: 50px;
+    font-size: 45px;
+    border-radius: 50px;
+    text-align: center;
+}
+::placeholder{
+    text-align: center;
+}
+
+
+#modalImage{
+    height: 140px;
+    width: 140px;
+
+}

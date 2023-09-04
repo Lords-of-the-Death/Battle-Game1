@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
+
+:root {
+	--marron: #a30000;
+	--noir: #000;
+	--bord: #d3a94c;
+	--vert: #00660a;
+	--rouge: #ff0000;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: url(./asset/Fond-team.jpg) center/cover;
+	min-height: 100vh;
+	overflow: hidden;
+}
+
+.banner {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+.button {
+	width: 250px;
+	height: 100px;
+	flex-shrink: 0;
+	border-radius: 50px;
+	border: 1px solid var(--noir);
+	background: var(--bord);
+	color: var(--noir);
+	text-align: center;
+	font-family: Metal Mania;
+	font-size: 50px;
+	font-weight: 400;
+	padding-top: 15px;
+	margin-top: 42px;
+}
+
+#buttong {
+	margin-left: 25px;
+}
+
+#buttond {
+	margin-right: 25px;
+}
+
+a {
+	text-decoration: none;
+}
+
+.cardsTeams {
+	display: flex;
+	justify-content: space-between;
+}
+
+.cardTeam1 {
+	width: 400px;
+	height: 150px;
+	flex-shrink: 0;
+	border-radius: 25px;
+	border: 5px solid var(--bord);
+	background: rgba(0, 0, 0, 0.5);
+	margin: 2rem;
+}
+
+.cardTeam2 {
+	width: 400px;
+	height: 150px;
+	flex-shrink: 0;
+	border-radius: 25px;
+	border: 5px solid  var(--bord);
+	background: rgba(0, 0, 0, 0.5);
+	margin: 2rem;
+}
+
+.cardTeamText {
+	display: flex;
+	margin-left: 60%;
+	margin-top: 10%;
+	width: 133px;
+	height: 61px;
+	flex-shrink: 0;
+	color: var(--bord);
+	text-align: center;
+	font-family: Metal Mania;
+	font-size: 40px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+
+.cardsEmpty {
+	display: flex;
+	justify-content: space-between;
+}
+
+.cardEmpty1 {
+	width: 400px;
+	height: 480px;
+	flex-shrink: 0;
+	border-radius: 25px;
+	border: 5px solid var(--bord);
+	background: rgba(0, 0, 0, 0.5);
+	margin: 2rem;
+}
+
+.cardEmpty2 {
+	width: 400px;
+	height: 480px;
+	flex-shrink: 0;
+	border-radius: 25px;
+	border: 5px solid var(--bord);
+	background: rgba(0, 0, 0, 0.5);
+	margin: 2rem;
+}
+
+.cardEmpty1 {
+	padding-top: 10px;
+	display: flex;
+	justify-content: center;
+}
+
+.cardEmpty2 {
+	padding-top: 10px;
+	display: flex;
+	justify-content: center;
+}
+
+.cardEmptyText {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Metal Mania', cursive;
+	color: var(--bord);
+	cursor: pointer;
+	font-size: 30px;
+	width: 300px;
+	height: 50px;
+	flex-shrink: 0;
+	border-radius: 50px;
+	border: 5px solid var(--bord);
+	background: var(--marron);
+}
+
+.cardsBattle {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+
+.cardBattle {
+    display: flex;
+	justify-content: center;
+	top: 0;
+	width: 800px;
+	height: 525px;
+	flex-shrink: 0;
+	border-radius: 50px;
+	border: 5px solid var(--bord);
+	background: rgba(0, 0, 0, 0.5);
+	position: relative;
+}
+
+.cardsBuff {
+	display: flex;
+	justify-content: space-between;
+}
+
+.cardBuff {
+    width: 800px;
+	height: 200px;
+	flex-shrink: 0;
+	border-radius: 25px;
+	border: 5px solid var(--bord);
+	background: rgba(0, 0, 0, 0.5);
+	margin: 2rem; 
+}
+
+.cardBuffText {
+    display: flex;
+    justify-content: center;
+	flex-shrink: 0;
+	color: var(--bord);
+	text-align: center;
+	font-family: Metal Mania;
+	font-size: 40px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+
+.img_container {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    padding-top: .6rem;
+}
+
+.img_text {
+    color: var(--bord);
+    text-align: center;
+}
+.btn {
+    display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 110px;
+	height: 50px;
+	flex-shrink: 0;
+	border-radius: 50px;
+	border: 5px solid var(--bord);
+	background: var(--vert);
+	position: absolute;
+	bottom: 20px; /* Espacement du bas */
+	right: 45%; 
+}
+
+.btn_text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--bord);
+    font-family: Metal Mania;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}

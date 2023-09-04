@@ -1,25 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Gladiators</title>
+  <title>battleFight</title>
   <link rel="stylesheet" href="battle.css">
 </head>
 
 <body>
-  <header>
-    <h1>The Gladiators</h1>
-  </header>
 
-  <section class="arena">
-    <div class="arenaContainer">
-      <img id="arenaBattle" src="../img/arena_jpg/" alt="randomArena">
+  <div class="top">
+    <div class="buff"><img src="../../image/buff/attack.png" alt="buffATK"></div>
+    <div class="toptop">
+      <h1>BATTLEFIGHT</h1>
+      <button id="go" class="start">GO</button>
+      <div id="infoGame"></div>
     </div>
-  </section>
+    <div class="buff"><img src="../../image/buff/shield.png" alt="buffDEF"></div>
+  </div>
 
-
+  <div class="contain">
+    <div id="team1"></div>
+    <div id="team2"></div>
+  </div>
 
   <script src="battle.js"></script>
 </body>
